@@ -1,64 +1,28 @@
 
 set(LIBSTEPCORE_SRCS
-  sdaiApplication_instance.cc
-  STEPcomplex.cc
-  STEPattribute.cc
-  STEPattribute.inline.cc
-  sdai.cc
-  sdaiSelect.cc
-  STEPaggregate.cc
-  STEPundefined.cc
-  STEPattributeList.cc
-  SingleLinkList.cc
-  SingleLinkList.inline.cc
-  Registry.inline.cc
-  ExpDict.cc
-  ExpDict.inline.cc
-  read_func.cc
-  collect.cc
-  complexlist.cc
-  entlist.cc
-  multlist.cc
-  orlist.cc
-  entnode.cc
-  non-ors.cc
-  match-ors.cc
-  trynext.cc
-  print.cc
-  instmgr.cc
-  mgrnode.cc
-  mgrnodearray.cc
-  mgrnodelist.cc
-  dispnode.cc
-  dispnodelist.cc
-  needFunc.cc
-  )
+  collect.cc                    mgrnodearray.cc                 sdaiSelect.cc
+  complexlist.cc                mgrnodelist.cc                  SingleLinkList.cc
+  dispnode.cc                   multlist.cc                     SingleLinkList.inline.cc
+  dispnodelist.cc               needFunc.cc                     STEPaggregate.cc
+  entlist.cc                    non-ors.cc                      STEPattribute.cc
+  entnode.cc                    orlist.cc                       STEPattribute.inline.cc
+  ExpDict.cc                    print.cc                        STEPattributeList.cc
+  ExpDict.inline.cc             read_func.cc                    STEPcomplex.cc
+  instmgr.cc                    Registry.inline.cc              STEPinvAttrList.cc
+  match-ors.cc                  sdai.cc                         STEPundefined.cc
+  mgrnode.cc                    sdaiApplication_instance.cc     trynext.cc
+ )
 
 set(SC_CLSTEPCORE_HDRS
-  baseType.h
-  complexSupport.h
-  dictdefs.h
-  ExpDict.h
-  read_func.h
-  Registry.h
-  sdaiApplication_instance.h
-  sdai.h
-  sdaiSelect.h
-  SingleLinkList.h
-  STEPaggregate.h
-  STEPattribute.h
-  STEPattributeList.h
-  STEPcomplex.h
-  STEPundefined.h
-  instmgr.h
-  mgrnode.h
-  mgrnodearray.h
-  mgrnodelist.h
-  dispnode.h
-  dispnodelist.h
-  needFunc.h
-  SubSuperIterators.h
-  )
+  baseType.h                    mgrnodearray.h                  SingleLinkList.h
+  complexSupport.h              mgrnodelist.h                   STEPaggregate.h
+  dictdefs.h                    needFunc.h                      STEPattribute.h
+  dispnode.h                    read_func.h                     STEPattributeList.h
+  dispnodelist.h                Registry.h                      STEPcomplex.h
+  ExpDict.h                     sdai.h                          STEPinvAttrList.h
+  instmgr.h                     sdaiApplication_instance.h      STEPundefined.h
+  mgrnode.h                     sdaiSelect.h                    SubSuperIterators.h
+ )
 
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}
