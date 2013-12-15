@@ -576,7 +576,12 @@ void LIBstructor_print( Entity entity, FILE * file, Schema schema ) {
         generate_attribute_name( a, attrnm );
         t = VARget_type( a );
 
-        if( ( ! VARget_inverse( a ) ) && ( ! VARis_derived( a ) ) )  {
+        if ( VARget_inverse( a ) ) {
+            entnm = ENTITYget_classname( entity ); //entnm points to a static buffer which may have been overwritten
+            fprintf( file, "    iAttrs.push( %s::a_%dI%s, %s::set_%s_, %s::get_%s_ );\n",
+                     SCHEMAget_name( schema ), count, attrnm, entnm, attrnm, entnm, attrnm );
+        } else if( ! VARis_derived( a ) )  {
+
             /*  1. create a new STEPattribute */
 
             /*  if type is aggregate, the variable is a pointer and needs initialized */
@@ -744,7 +749,12 @@ void LIBstructor_print_w_args( Entity entity, FILE * file, Schema schema ) {
             generate_attribute_name( a, attrnm );
             t = VARget_type( a );
 
-            if( ( ! VARget_inverse( a ) ) && ( ! VARis_derived( a ) ) )  {
+            if ( VARget_inverse( a ) ) {
+                entnm = ENTITYget_classname( entity ); //entnm points to a static buffer which may have been overwritten
+                fprintf( file, "    iAttrs.push( %s::a_%dI%s, %s::set_%s_, %s::get_%s_ );\n",
+                         SCHEMAget_name( schema ), count, attrnm, entnm, attrnm, entnm, attrnm );
+            } else if( ! VARis_derived( a ) ) {
+
                 /*  1. create a new STEPattribute */
 
                 /*  if type is aggregate, the variable is a pointer and needs initialized */
