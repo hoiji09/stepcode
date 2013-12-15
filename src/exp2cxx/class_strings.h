@@ -36,8 +36,8 @@ const char * TypeName( Type t );
 /** These functions take a character or a string and return
  ** a temporary copy of the string with the function applied to it.
  **
- ** Side Effects:  character or string returned persists until the
- ** next invocation of the function
+ ** \note The character or string returned persists until the
+ ** next invocation of the function.
  **
  ** \returns a temporary copy of characters
  ** @{
