@@ -123,13 +123,6 @@ typedef int ( *intFuncptr )();
 /* allow same declarations to suffice for both Standard and Classic C */
 /* ... at least in header files ... */
 
-#ifndef CONST
-# ifdef __STDC__
-#  define CONST     const
-# else
-#  define CONST
-# endif
-#endif
 
 #ifndef PROTO
 # ifdef __STDC__

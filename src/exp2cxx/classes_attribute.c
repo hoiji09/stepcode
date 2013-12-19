@@ -156,7 +156,7 @@ void ATTRprint_access_methods_get_head( const char * classnm, Variable a,
  ** Side Effects:
  ** Status:  complete 7/15/93       by DDH
  ******************************************************************/
-void ATTRprint_access_methods_put_head( CONST char * entnm, Variable a, FILE * file ) {
+void ATTRprint_access_methods_put_head( const char * entnm, Variable a, FILE * file ) {
 
     Type t = VARget_type( a );
     char ctype [BUFSIZ];
@@ -171,7 +171,7 @@ void ATTRprint_access_methods_put_head( CONST char * entnm, Variable a, FILE * f
     return;
 }
 
-void AGGRprint_access_methods( CONST char * entnm, Variable a, FILE * file,
+void AGGRprint_access_methods( const char * entnm, Variable a, FILE * file,
                                char * ctype, char * attrnm ) {
     ATTRprint_access_methods_get_head( entnm, a, file );
     fprintf( file, "{\n    if( !_%s ) {\n        _%s = new %s;\n    }\n", attrnm, attrnm, TypeName( a->type ) );
@@ -242,7 +242,7 @@ void ATTRprint_access_methods_entity( const char * entnm, const char * attrnm, c
  **     updated 17-Feb-1992 to print to library file instead of header
  ** updated 15-July-1993 to call the get/put head functions by DDH
  ******************************************************************/
-void ATTRprint_access_methods( CONST char * entnm, Variable a, FILE * file ) {
+void ATTRprint_access_methods( const char * entnm, Variable a, FILE * file ) {
     Type t = VARget_type( a );
     Class_Of_Type class;
     char ctype [BUFSIZ];  /*  type of data member  */
