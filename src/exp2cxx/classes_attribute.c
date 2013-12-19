@@ -242,7 +242,7 @@ void ATTRprint_access_methods_entity( const char * entnm, const char * attrnm, c
  **     updated 17-Feb-1992 to print to library file instead of header
  ** updated 15-July-1993 to call the get/put head functions by DDH
  ******************************************************************/
-void ATTRprint_access_methods( CONST char * entnm, Variable a, FILE * file ) {
+void ATTRprint_access_methods( const char * entnm, Variable a, FILE * file ) {
     Type t = VARget_type( a );
     Class_Of_Type class;
     char ctype [BUFSIZ];  /*  type of data member  */
