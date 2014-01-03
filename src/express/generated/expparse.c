@@ -25,75 +25,7 @@ YYSTYPE yylval;
      * Revision 1.23  1997/11/14 17:09:04  libes
      * allow multiple group references
      *
-     * Revision 1.22  1997/01/21 19:35:43  dar
-     * made C++ compatible
-     *
-     * Revision 1.21  1995/06/08  22:59:59  clark
-     * bug fixes
-     *
-     * Revision 1.20  1995/04/08  21:06:07  clark
-     * WHERE rule resolution bug fixes, take 2
-     *
-     * Revision 1.19  1995/04/08  20:54:18  clark
-     * WHERE rule resolution bug fixes
-     *
-     * Revision 1.19  1995/04/08  20:49:08  clark
-     * WHERE
-     *
-     * Revision 1.18  1995/04/05  13:55:40  clark
-     * CADDETC preval
-     *
-     * Revision 1.17  1995/03/09  18:43:47  clark
-     * various fixes for caddetc - before interface clause changes
-     *
-     * Revision 1.16  1994/11/29  20:55:58  clark
-     * fix inline comment bug
-     *
-     * Revision 1.15  1994/11/22  18:32:39  clark
-     * Part 11 IS; group reference
-     *
-     * Revision 1.14  1994/11/10  19:20:03  clark
-     * Update to IS
-     *
-     * Revision 1.13  1994/05/11  19:50:00  libes
-     * numerous fixes
-     *
-     * Revision 1.12  1993/10/15  18:47:26  libes
-     * CADDETC certified
-     *
-     * Revision 1.10  1993/03/19  20:53:57  libes
-     * one more, with feeling
-     *
-     * Revision 1.9  1993/03/19  20:39:51  libes
-     * added unique to parameter types
-     *
-     * Revision 1.8  1993/02/16  03:17:22  libes
-     * reorg'd alg bodies to not force artificial begin/ends
-     * added flag to differentiate parameters in scopes
-     * rewrote query to fix scope handling
-     * added support for Where type
-     *
-     * Revision 1.7  1993/01/19  22:44:17  libes
-     * *** empty log message ***
-     *
-     * Revision 1.6  1992/08/27  23:36:35  libes
-     * created fifo for new schemas that are parsed
-     * connected entity list to create of oneof
-     *
-     * Revision 1.5  1992/08/18  17:11:36  libes
-     * rm'd extraneous error messages
-     *
-     * Revision 1.4  1992/06/08  18:05:20  libes
-     * prettied up interface to print_objects_when_running
-     *
-     * Revision 1.3  1992/05/31  23:31:13  libes
-     * implemented ALIAS resolution
-     *
-     * Revision 1.2  1992/05/31  08:30:54  libes
-     * multiple files
-     *
-     * Revision 1.1  1992/05/28  03:52:25  libes
-     * Initial revision
+     * ** 22 older revision log records removed 3 January 2014 **
      */
 
 #include "express/symbol.h"
@@ -186,7 +118,7 @@ void parserInitState()
     yyexpresult->symbol.filename = yyexpresult->u.express->filename;
     yyexpresult->symbol.line = 1;
 }
-#line 190 "expparse.c"
+#line 122 "expparse.c"
 /* Next is all token values, in a form suitable for use by makeheaders.
 ** This section will be null unless lemon is run with the -m switch.
 */
@@ -1602,13 +1534,13 @@ static void yy_destructor(
     */
     case 122: /* statement_list */
 {
-#line 187 "expparse.y"
+#line 119 "expparse.y"
 
     if (parseData.scanner == NULL) {
     (yypminor->yy0).string = (char*)NULL;
     }
 
-#line 1612 "expparse.c"
+#line 1544 "expparse.c"
 }
       break;
     default:  break;   /* If no destructor action specified: do nothing */
@@ -1793,11 +1725,11 @@ static void yyStackOverflow(yyParser *yypParser, YYMINORTYPE *yypMinor){
    while( yypParser->yyidx>=0 ) yy_pop_parser_stack(yypParser);
    /* Here code is inserted which will execute if the parser
    ** stack every overflows */
-#line 2501 "expparse.y"
+#line 2433 "expparse.y"
 
     fprintf(stderr, "Express parser experienced stack overflow.\n");
     fprintf(stderr, "Last token had value %x\n", yypMinor->yy0.val);
-#line 1801 "expparse.c"
+#line 1733 "expparse.c"
    ParseARG_STORE; /* Suppress warning about unused %extra_argument var */
 }
 
@@ -2256,11 +2188,11 @@ static void yy_reduce(
       case 320: /* unique_clause ::= TOK_UNIQUE labelled_attrib_list_list */ yytestcase(yyruleno==320);
       case 327: /* where_rule ::= TOK_WHERE where_clause_list */ yytestcase(yyruleno==327);
       case 329: /* where_rule_OPT ::= where_rule */ yytestcase(yyruleno==329);
-#line 360 "expparse.y"
+#line 292 "expparse.y"
 {
     yygotominor.yy371 = yymsp[0].minor.yy371;
 }
-#line 2264 "expparse.c"
+#line 2196 "expparse.c"
         break;
       case 1: /* action_body_item ::= declaration */
       case 2: /* action_body_item ::= constant_decl */ yytestcase(yyruleno==2);
@@ -2279,11 +2211,11 @@ static void yy_reduce(
       case 203: /* oneof_op ::= TOK_ONEOF */ yytestcase(yyruleno==203);
       case 251: /* schema_decl ::= include_directive */ yytestcase(yyruleno==251);
       case 291: /* type_item_body ::= enumeration_type */ yytestcase(yyruleno==291);
-#line 366 "expparse.y"
+#line 298 "expparse.y"
 {
     yygotominor.yy0 = yymsp[0].minor.yy0;
 }
-#line 2287 "expparse.c"
+#line 2219 "expparse.c"
         break;
       case 5: /* action_body_item_rep ::= action_body_item action_body_item_rep */
       case 42: /* block_list ::= block_list block_member */ yytestcase(yyruleno==42);
@@ -2292,44 +2224,44 @@ static void yy_reduce(
       case 169: /* interface_specification_list ::= interface_specification_list interface_specification */ yytestcase(yyruleno==169);
       case 195: /* local_body ::= local_variable local_body */ yytestcase(yyruleno==195);
       case 248: /* schema_body ::= interface_specification_list block_list */ yytestcase(yyruleno==248);
-#line 383 "expparse.y"
+#line 315 "expparse.y"
 {
     yygotominor.yy0 = yymsp[-1].minor.yy0;
 }
-#line 2300 "expparse.c"
+#line 2232 "expparse.c"
         break;
       case 6: /* actual_parameters ::= TOK_LEFT_PAREN expression_list TOK_RIGHT_PAREN */
       case 202: /* nested_id_list ::= TOK_LEFT_PAREN id_list TOK_RIGHT_PAREN */ yytestcase(yyruleno==202);
       case 275: /* subtype_decl ::= TOK_SUBTYPE TOK_OF TOK_LEFT_PAREN defined_type_list TOK_RIGHT_PAREN */ yytestcase(yyruleno==275);
-#line 400 "expparse.y"
+#line 332 "expparse.y"
 {
     yygotominor.yy371 = yymsp[-1].minor.yy371;
 }
-#line 2309 "expparse.c"
+#line 2241 "expparse.c"
         break;
       case 7: /* actual_parameters ::= TOK_LEFT_PAREN TOK_RIGHT_PAREN */
       case 319: /* unique_clause ::= */ yytestcase(yyruleno==319);
-#line 404 "expparse.y"
+#line 336 "expparse.y"
 {
     yygotominor.yy371 = 0;
 }
-#line 2317 "expparse.c"
+#line 2249 "expparse.c"
         break;
       case 8: /* aggregate_initializer ::= TOK_LEFT_BRACKET TOK_RIGHT_BRACKET */
-#line 410 "expparse.y"
+#line 342 "expparse.y"
 {
     yygotominor.yy401 = EXPcreate(Type_Aggregate);
     yygotominor.yy401->u.list = LISTcreate();
 }
-#line 2325 "expparse.c"
+#line 2257 "expparse.c"
         break;
       case 9: /* aggregate_initializer ::= TOK_LEFT_BRACKET aggregate_init_body TOK_RIGHT_BRACKET */
-#line 416 "expparse.y"
+#line 348 "expparse.y"
 {
     yygotominor.yy401 = EXPcreate(Type_Aggregate);
     yygotominor.yy401->u.list = yymsp[-1].minor.yy371;
 }
-#line 2333 "expparse.c"
+#line 2265 "expparse.c"
         break;
       case 10: /* aggregate_init_element ::= expression */
       case 25: /* assignable ::= identifier */ yytestcase(yyruleno==25);
@@ -2350,25 +2282,25 @@ static void yy_reduce(
       case 312: /* qualified_attr ::= attribute_decl */ yytestcase(yyruleno==312);
       case 322: /* until_control ::= TOK_UNTIL expression */ yytestcase(yyruleno==322);
       case 331: /* while_control ::= TOK_WHILE expression */ yytestcase(yyruleno==331);
-#line 422 "expparse.y"
+#line 354 "expparse.y"
 {
     yygotominor.yy401 = yymsp[0].minor.yy401;
 }
-#line 2358 "expparse.c"
+#line 2290 "expparse.c"
         break;
       case 11: /* aggregate_init_body ::= aggregate_init_element */
       case 113: /* expression_list ::= expression */ yytestcase(yyruleno==113);
       case 282: /* supertype_expression_list ::= supertype_expression */ yytestcase(yyruleno==282);
       case 313: /* qualified_attr_list ::= qualified_attr */ yytestcase(yyruleno==313);
-#line 427 "expparse.y"
+#line 359 "expparse.y"
 {
     yygotominor.yy371 = LISTcreate();
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy401);
 }
-#line 2369 "expparse.c"
+#line 2301 "expparse.c"
         break;
       case 12: /* aggregate_init_body ::= aggregate_init_element TOK_COLON expression */
-#line 432 "expparse.y"
+#line 364 "expparse.y"
 {
     yygotominor.yy371 = LISTcreate();
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[-2].minor.yy401);
@@ -2377,20 +2309,20 @@ static void yy_reduce(
 
     yymsp[0].minor.yy401->type = Type_Repeat;
 }
-#line 2381 "expparse.c"
+#line 2313 "expparse.c"
         break;
       case 13: /* aggregate_init_body ::= aggregate_init_body TOK_COMMA aggregate_init_element */
-#line 442 "expparse.y"
+#line 374 "expparse.y"
 { 
     yygotominor.yy371 = yymsp[-2].minor.yy371;
 
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy401);
 
 }
-#line 2391 "expparse.c"
+#line 2323 "expparse.c"
         break;
       case 14: /* aggregate_init_body ::= aggregate_init_body TOK_COMMA aggregate_init_element TOK_COLON expression */
-#line 450 "expparse.y"
+#line 382 "expparse.y"
 {
     yygotominor.yy371 = yymsp[-4].minor.yy371;
 
@@ -2399,10 +2331,10 @@ static void yy_reduce(
 
     yymsp[0].minor.yy401->type = Type_Repeat;
 }
-#line 2403 "expparse.c"
+#line 2335 "expparse.c"
         break;
       case 15: /* aggregate_type ::= TOK_AGGREGATE TOK_OF parameter_type */
-#line 460 "expparse.y"
+#line 392 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(aggregate_);
     yygotominor.yy477->base = yymsp[0].minor.yy297;
@@ -2415,10 +2347,10 @@ static void yy_reduce(
         CURRENT_SCOPE_NAME);
     }
 }
-#line 2419 "expparse.c"
+#line 2351 "expparse.c"
         break;
       case 16: /* aggregate_type ::= TOK_AGGREGATE TOK_COLON TOK_IDENTIFIER TOK_OF parameter_type */
-#line 474 "expparse.y"
+#line 406 "expparse.y"
 {
     Type t = TYPEcreate_user_defined_tag(yymsp[0].minor.yy297, CURRENT_SCOPE, yymsp[-2].minor.yy0.symbol);
 
@@ -2429,20 +2361,20 @@ static void yy_reduce(
         yygotominor.yy477->base = yymsp[0].minor.yy297;
     }
 }
-#line 2433 "expparse.c"
+#line 2365 "expparse.c"
         break;
       case 17: /* aggregation_type ::= array_type */
       case 18: /* aggregation_type ::= bag_type */ yytestcase(yyruleno==18);
       case 19: /* aggregation_type ::= list_type */ yytestcase(yyruleno==19);
       case 20: /* aggregation_type ::= set_type */ yytestcase(yyruleno==20);
-#line 486 "expparse.y"
+#line 418 "expparse.y"
 {
     yygotominor.yy477 = yymsp[0].minor.yy477;
 }
-#line 2443 "expparse.c"
+#line 2375 "expparse.c"
         break;
       case 21: /* alias_statement ::= TOK_ALIAS TOK_IDENTIFIER TOK_FOR general_ref semicolon alias_push_scope statement_rep TOK_END_ALIAS semicolon */
-#line 505 "expparse.y"
+#line 437 "expparse.y"
 {
     Expression e = EXPcreate_from_symbol(Type_Attribute, yymsp[-7].minor.yy0.symbol);
     Variable v = VARcreate(e, Type_Unknown);
@@ -2455,18 +2387,18 @@ static void yy_reduce(
 
     POP_SCOPE();
 }
-#line 2459 "expparse.c"
+#line 2391 "expparse.c"
         break;
       case 22: /* alias_push_scope ::= */
-#line 519 "expparse.y"
+#line 451 "expparse.y"
 {
     struct Scope_ *s = SCOPEcreate_tiny(OBJ_ALIAS);
     PUSH_SCOPE(s, (Symbol *)0, OBJ_ALIAS);
 }
-#line 2467 "expparse.c"
+#line 2399 "expparse.c"
         break;
       case 23: /* array_type ::= TOK_ARRAY bound_spec TOK_OF optional_or_unique attribute_type */
-#line 526 "expparse.y"
+#line 458 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(array_);
 
@@ -2476,162 +2408,162 @@ static void yy_reduce(
     yygotominor.yy477->lower = yymsp[-3].minor.yy253.lower_limit;
     yygotominor.yy477->base = yymsp[0].minor.yy297;
 }
-#line 2480 "expparse.c"
+#line 2412 "expparse.c"
         break;
       case 24: /* assignable ::= assignable qualifier */
       case 300: /* unary_expression ::= unary_expression qualifier */ yytestcase(yyruleno==300);
-#line 538 "expparse.y"
+#line 470 "expparse.y"
 {
     yymsp[0].minor.yy46.first->e.op1 = yymsp[-1].minor.yy401;
     yygotominor.yy401 = yymsp[0].minor.yy46.expr;
 }
-#line 2489 "expparse.c"
+#line 2421 "expparse.c"
         break;
       case 26: /* assignment_statement ::= assignable TOK_ASSIGNMENT expression semicolon */
-#line 549 "expparse.y"
+#line 481 "expparse.y"
 { 
     yygotominor.yy332 = ASSIGNcreate(yymsp[-3].minor.yy401, yymsp[-1].minor.yy401);
 }
-#line 2496 "expparse.c"
+#line 2428 "expparse.c"
         break;
       case 27: /* attribute_type ::= aggregation_type */
       case 28: /* attribute_type ::= basic_type */ yytestcase(yyruleno==28);
       case 122: /* parameter_type ::= basic_type */ yytestcase(yyruleno==122);
       case 123: /* parameter_type ::= conformant_aggregation */ yytestcase(yyruleno==123);
-#line 554 "expparse.y"
+#line 486 "expparse.y"
 {
     yygotominor.yy297 = TYPEcreate_from_body_anonymously(yymsp[0].minor.yy477);
     SCOPEadd_super(yygotominor.yy297);
 }
-#line 2507 "expparse.c"
+#line 2439 "expparse.c"
         break;
       case 29: /* attribute_type ::= defined_type */
       case 124: /* parameter_type ::= defined_type */ yytestcase(yyruleno==124);
       case 125: /* parameter_type ::= generic_type */ yytestcase(yyruleno==125);
-#line 564 "expparse.y"
+#line 496 "expparse.y"
 {
     yygotominor.yy297 = yymsp[0].minor.yy297;
 }
-#line 2516 "expparse.c"
+#line 2448 "expparse.c"
         break;
       case 30: /* explicit_attr_list ::= */
       case 50: /* case_action_list ::= */ yytestcase(yyruleno==50);
       case 69: /* derive_decl ::= */ yytestcase(yyruleno==69);
       case 268: /* statement_rep ::= */ yytestcase(yyruleno==268);
-#line 569 "expparse.y"
+#line 501 "expparse.y"
 {
     yygotominor.yy371 = LISTcreate();
 }
-#line 2526 "expparse.c"
+#line 2458 "expparse.c"
         break;
       case 31: /* explicit_attr_list ::= explicit_attr_list explicit_attribute */
-#line 573 "expparse.y"
+#line 505 "expparse.y"
 {
     yygotominor.yy371 = yymsp[-1].minor.yy371;
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy371); 
 }
-#line 2534 "expparse.c"
+#line 2466 "expparse.c"
         break;
       case 32: /* bag_type ::= TOK_BAG bound_spec TOK_OF attribute_type */
       case 138: /* conformant_aggregation ::= TOK_BAG bound_spec TOK_OF parameter_type */ yytestcase(yyruleno==138);
-#line 579 "expparse.y"
+#line 511 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(bag_);
     yygotominor.yy477->base = yymsp[0].minor.yy297;
     yygotominor.yy477->upper = yymsp[-2].minor.yy253.upper_limit;
     yygotominor.yy477->lower = yymsp[-2].minor.yy253.lower_limit;
 }
-#line 2545 "expparse.c"
+#line 2477 "expparse.c"
         break;
       case 33: /* bag_type ::= TOK_BAG TOK_OF attribute_type */
-#line 586 "expparse.y"
+#line 518 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(bag_);
     yygotominor.yy477->base = yymsp[0].minor.yy297;
 }
-#line 2553 "expparse.c"
+#line 2485 "expparse.c"
         break;
       case 34: /* basic_type ::= TOK_BOOLEAN */
-#line 592 "expparse.y"
+#line 524 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(boolean_);
 }
-#line 2560 "expparse.c"
+#line 2492 "expparse.c"
         break;
       case 35: /* basic_type ::= TOK_INTEGER precision_spec */
-#line 596 "expparse.y"
+#line 528 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(integer_);
     yygotominor.yy477->precision = yymsp[0].minor.yy401;
 }
-#line 2568 "expparse.c"
+#line 2500 "expparse.c"
         break;
       case 36: /* basic_type ::= TOK_REAL precision_spec */
-#line 601 "expparse.y"
+#line 533 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(real_);
     yygotominor.yy477->precision = yymsp[0].minor.yy401;
 }
-#line 2576 "expparse.c"
+#line 2508 "expparse.c"
         break;
       case 37: /* basic_type ::= TOK_NUMBER */
-#line 606 "expparse.y"
+#line 538 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(number_);
 }
-#line 2583 "expparse.c"
+#line 2515 "expparse.c"
         break;
       case 38: /* basic_type ::= TOK_LOGICAL */
-#line 610 "expparse.y"
+#line 542 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(logical_);
 }
-#line 2590 "expparse.c"
+#line 2522 "expparse.c"
         break;
       case 39: /* basic_type ::= TOK_BINARY precision_spec optional_fixed */
-#line 614 "expparse.y"
+#line 546 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(binary_);
     yygotominor.yy477->precision = yymsp[-1].minor.yy401;
     yygotominor.yy477->flags.fixed = yymsp[0].minor.yy252.fixed;
 }
-#line 2599 "expparse.c"
+#line 2531 "expparse.c"
         break;
       case 40: /* basic_type ::= TOK_STRING precision_spec optional_fixed */
-#line 620 "expparse.y"
+#line 552 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(string_);
     yygotominor.yy477->precision = yymsp[-1].minor.yy401;
     yygotominor.yy477->flags.fixed = yymsp[0].minor.yy252.fixed;
 }
-#line 2608 "expparse.c"
+#line 2540 "expparse.c"
         break;
       case 46: /* by_expression ::= */
-#line 646 "expparse.y"
+#line 578 "expparse.y"
 {
     yygotominor.yy401 = LITERAL_ONE;
 }
-#line 2615 "expparse.c"
+#line 2547 "expparse.c"
         break;
       case 48: /* cardinality_op ::= TOK_LEFT_CURL expression TOK_COLON expression TOK_RIGHT_CURL */
       case 181: /* bound_spec ::= TOK_LEFT_BRACKET expression TOK_COLON expression TOK_RIGHT_BRACKET */ yytestcase(yyruleno==181);
-#line 656 "expparse.y"
+#line 588 "expparse.y"
 {
     yygotominor.yy253.lower_limit = yymsp[-3].minor.yy401;
     yygotominor.yy253.upper_limit = yymsp[-1].minor.yy401;
 }
-#line 2624 "expparse.c"
+#line 2556 "expparse.c"
         break;
       case 49: /* case_action ::= case_labels TOK_COLON statement */
-#line 662 "expparse.y"
+#line 594 "expparse.y"
 {
     yygotominor.yy321 = CASE_ITcreate(yymsp[-2].minor.yy371, yymsp[0].minor.yy332);
     SYMBOLset(yygotominor.yy321);
 }
-#line 2632 "expparse.c"
+#line 2564 "expparse.c"
         break;
       case 51: /* case_action_list ::= case_action_list case_action */
-#line 672 "expparse.y"
+#line 604 "expparse.y"
 {
     yyerrok;
 
@@ -2639,10 +2571,10 @@ static void yy_reduce(
 
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy321);
 }
-#line 2643 "expparse.c"
+#line 2575 "expparse.c"
         break;
       case 52: /* case_block ::= case_action_list case_otherwise */
-#line 681 "expparse.y"
+#line 613 "expparse.y"
 {
     yygotominor.yy371 = yymsp[-1].minor.yy371;
 
@@ -2651,72 +2583,72 @@ static void yy_reduce(
         (Generic)yymsp[0].minor.yy321);
     }
 }
-#line 2655 "expparse.c"
+#line 2587 "expparse.c"
         break;
       case 53: /* case_labels ::= expression */
-#line 691 "expparse.y"
+#line 623 "expparse.y"
 {
     yygotominor.yy371 = LISTcreate();
 
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy401);
 }
-#line 2664 "expparse.c"
+#line 2596 "expparse.c"
         break;
       case 54: /* case_labels ::= case_labels TOK_COMMA expression */
-#line 697 "expparse.y"
+#line 629 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy371 = yymsp[-2].minor.yy371;
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy401);
 }
-#line 2674 "expparse.c"
+#line 2606 "expparse.c"
         break;
       case 55: /* case_otherwise ::= */
-#line 705 "expparse.y"
+#line 637 "expparse.y"
 {
     yygotominor.yy321 = (Case_Item)0;
 }
-#line 2681 "expparse.c"
+#line 2613 "expparse.c"
         break;
       case 56: /* case_otherwise ::= TOK_OTHERWISE TOK_COLON statement */
-#line 709 "expparse.y"
+#line 641 "expparse.y"
 {
     yygotominor.yy321 = CASE_ITcreate(LIST_NULL, yymsp[0].minor.yy332);
     SYMBOLset(yygotominor.yy321);
 }
-#line 2689 "expparse.c"
+#line 2621 "expparse.c"
         break;
       case 57: /* case_statement ::= TOK_CASE expression TOK_OF case_block TOK_END_CASE semicolon */
-#line 716 "expparse.y"
+#line 648 "expparse.y"
 {
     yygotominor.yy332 = CASEcreate(yymsp[-4].minor.yy401, yymsp[-2].minor.yy371);
 }
-#line 2696 "expparse.c"
+#line 2628 "expparse.c"
         break;
       case 58: /* compound_statement ::= TOK_BEGIN statement_rep TOK_END semicolon */
-#line 721 "expparse.y"
+#line 653 "expparse.y"
 {
     yygotominor.yy332 = COMP_STMTcreate(yymsp[-2].minor.yy371);
 }
-#line 2703 "expparse.c"
+#line 2635 "expparse.c"
         break;
       case 59: /* constant ::= TOK_PI */
-#line 726 "expparse.y"
+#line 658 "expparse.y"
 { 
     yygotominor.yy401 = LITERAL_PI;
 }
-#line 2710 "expparse.c"
+#line 2642 "expparse.c"
         break;
       case 60: /* constant ::= TOK_E */
-#line 731 "expparse.y"
+#line 663 "expparse.y"
 { 
     yygotominor.yy401 = LITERAL_E;
 }
-#line 2717 "expparse.c"
+#line 2649 "expparse.c"
         break;
       case 61: /* constant_body ::= identifier TOK_COLON attribute_type TOK_ASSIGNMENT expression semicolon */
-#line 738 "expparse.y"
+#line 670 "expparse.y"
 {
     Variable v;
 
@@ -2727,44 +2659,44 @@ static void yy_reduce(
     DICTdefine(CURRENT_SCOPE->symbol_table, yymsp[-5].minor.yy401->symbol.name, (Generic)v,
     &yymsp[-5].minor.yy401->symbol, OBJ_VARIABLE);
 }
-#line 2731 "expparse.c"
+#line 2663 "expparse.c"
         break;
       case 64: /* constant_decl ::= TOK_CONSTANT constant_body_list TOK_END_CONSTANT semicolon */
-#line 757 "expparse.y"
+#line 689 "expparse.y"
 {
     yygotominor.yy0 = yymsp[-3].minor.yy0;
 }
-#line 2738 "expparse.c"
+#line 2670 "expparse.c"
         break;
       case 71: /* derived_attribute ::= attribute_decl TOK_COLON attribute_type initializer semicolon */
-#line 789 "expparse.y"
+#line 721 "expparse.y"
 {
     yygotominor.yy91 = VARcreate(yymsp[-4].minor.yy401, yymsp[-2].minor.yy297);
     yygotominor.yy91->initializer = yymsp[-1].minor.yy401;
     yygotominor.yy91->flags.attribute = true;
 }
-#line 2747 "expparse.c"
+#line 2679 "expparse.c"
         break;
       case 72: /* derived_attribute_rep ::= derived_attribute */
       case 176: /* inverse_attr_list ::= inverse_attr */ yytestcase(yyruleno==176);
-#line 796 "expparse.y"
+#line 728 "expparse.y"
 {
     yygotominor.yy371 = LISTcreate();
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy91);
 }
-#line 2756 "expparse.c"
+#line 2688 "expparse.c"
         break;
       case 73: /* derived_attribute_rep ::= derived_attribute_rep derived_attribute */
       case 177: /* inverse_attr_list ::= inverse_attr_list inverse_attr */ yytestcase(yyruleno==177);
-#line 801 "expparse.y"
+#line 733 "expparse.y"
 {
     yygotominor.yy371 = yymsp[-1].minor.yy371;
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy91);
 }
-#line 2765 "expparse.c"
+#line 2697 "expparse.c"
         break;
       case 74: /* entity_body ::= explicit_attr_list derive_decl inverse_clause unique_clause where_rule_OPT */
-#line 808 "expparse.y"
+#line 740 "expparse.y"
 {
     yygotominor.yy176.attributes = yymsp[-4].minor.yy371;
     /* this is flattened out in entity_decl - DEL */
@@ -2777,10 +2709,10 @@ static void yy_reduce(
     yygotominor.yy176.unique = yymsp[-1].minor.yy371;
     yygotominor.yy176.where = yymsp[0].minor.yy371;
 }
-#line 2781 "expparse.c"
+#line 2713 "expparse.c"
         break;
       case 75: /* entity_decl ::= entity_header subsuper_decl semicolon entity_body TOK_END_ENTITY semicolon */
-#line 823 "expparse.y"
+#line 755 "expparse.y"
 {
     CURRENT_SCOPE->u.entity->subtype_expression = yymsp[-4].minor.yy242.subtypes;
     CURRENT_SCOPE->u.entity->supertype_symbols = yymsp[-4].minor.yy242.supertypes;
@@ -2794,10 +2726,10 @@ static void yy_reduce(
     CURRENT_SCOPE->where = yymsp[-2].minor.yy176.where;
     POP_SCOPE();
 }
-#line 2798 "expparse.c"
+#line 2730 "expparse.c"
         break;
       case 76: /* entity_header ::= TOK_ENTITY TOK_IDENTIFIER */
-#line 838 "expparse.y"
+#line 770 "expparse.y"
 {
     Entity e = ENTITYcreate(yymsp[0].minor.yy0.symbol);
 
@@ -2807,10 +2739,10 @@ static void yy_reduce(
 
     PUSH_SCOPE(e, yymsp[0].minor.yy0.symbol, OBJ_ENTITY);
 }
-#line 2811 "expparse.c"
+#line 2743 "expparse.c"
         break;
       case 77: /* enumeration_type ::= TOK_ENUMERATION TOK_OF nested_id_list */
-#line 849 "expparse.y"
+#line 781 "expparse.y"
 {
     int value = 0;
     Expression x;
@@ -2842,26 +2774,26 @@ static void yy_reduce(
         SYMBOL_destroy(tmp);
     } LISTod;
 }
-#line 2846 "expparse.c"
+#line 2778 "expparse.c"
         break;
       case 78: /* escape_statement ::= TOK_ESCAPE semicolon */
-#line 882 "expparse.y"
+#line 814 "expparse.y"
 {
     yygotominor.yy332 = STATEMENT_ESCAPE;
 }
-#line 2853 "expparse.c"
+#line 2785 "expparse.c"
         break;
       case 79: /* attribute_decl ::= TOK_IDENTIFIER */
-#line 897 "expparse.y"
+#line 829 "expparse.y"
 {
     yygotominor.yy401 = EXPcreate(Type_Attribute);
     yygotominor.yy401->symbol = *yymsp[0].minor.yy0.symbol;
     SYMBOL_destroy(yymsp[0].minor.yy0.symbol);
 }
-#line 2862 "expparse.c"
+#line 2794 "expparse.c"
         break;
       case 80: /* attribute_decl ::= TOK_SELF TOK_BACKSLASH TOK_IDENTIFIER TOK_DOT TOK_IDENTIFIER */
-#line 904 "expparse.y"
+#line 836 "expparse.y"
 {
     yygotominor.yy401 = EXPcreate(Type_Expression);
     yygotominor.yy401->e.op1 = EXPcreate(Type_Expression);
@@ -2874,43 +2806,43 @@ static void yy_reduce(
     yygotominor.yy401->e.op2 = EXPcreate_from_symbol(Type_Attribute, yymsp[0].minor.yy0.symbol);
     SYMBOL_destroy(yymsp[0].minor.yy0.symbol);
 }
-#line 2878 "expparse.c"
+#line 2810 "expparse.c"
         break;
       case 81: /* attribute_decl_list ::= attribute_decl */
-#line 918 "expparse.y"
+#line 850 "expparse.y"
 {
     yygotominor.yy371 = LISTcreate();
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy401);
 
 }
-#line 2887 "expparse.c"
+#line 2819 "expparse.c"
         break;
       case 82: /* attribute_decl_list ::= attribute_decl_list TOK_COMMA attribute_decl */
       case 114: /* expression_list ::= expression_list TOK_COMMA expression */ yytestcase(yyruleno==114);
       case 314: /* qualified_attr_list ::= qualified_attr_list TOK_COMMA qualified_attr */ yytestcase(yyruleno==314);
-#line 925 "expparse.y"
+#line 857 "expparse.y"
 {
     yygotominor.yy371 = yymsp[-2].minor.yy371;
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy401);
 }
-#line 2897 "expparse.c"
+#line 2829 "expparse.c"
         break;
       case 83: /* optional ::= */
-#line 931 "expparse.y"
+#line 863 "expparse.y"
 {
     yygotominor.yy252.optional = 0;
 }
-#line 2904 "expparse.c"
+#line 2836 "expparse.c"
         break;
       case 84: /* optional ::= TOK_OPTIONAL */
-#line 935 "expparse.y"
+#line 867 "expparse.y"
 {
     yygotominor.yy252.optional = 1;
 }
-#line 2911 "expparse.c"
+#line 2843 "expparse.c"
         break;
       case 85: /* explicit_attribute ::= attribute_decl_list TOK_COLON optional attribute_type semicolon */
-#line 941 "expparse.y"
+#line 873 "expparse.y"
 {
     Variable v;
 
@@ -2923,222 +2855,222 @@ static void yy_reduce(
 
     yygotominor.yy371 = yymsp[-4].minor.yy371;
 }
-#line 2927 "expparse.c"
+#line 2859 "expparse.c"
         break;
       case 90: /* expression ::= expression TOK_AND expression */
-#line 970 "expparse.y"
+#line 902 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_AND, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 2936 "expparse.c"
+#line 2868 "expparse.c"
         break;
       case 91: /* expression ::= expression TOK_OR expression */
-#line 976 "expparse.y"
+#line 908 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_OR, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 2945 "expparse.c"
+#line 2877 "expparse.c"
         break;
       case 92: /* expression ::= expression TOK_XOR expression */
-#line 982 "expparse.y"
+#line 914 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_XOR, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 2954 "expparse.c"
+#line 2886 "expparse.c"
         break;
       case 93: /* expression ::= expression TOK_LESS_THAN expression */
-#line 988 "expparse.y"
+#line 920 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_LESS_THAN, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 2963 "expparse.c"
+#line 2895 "expparse.c"
         break;
       case 94: /* expression ::= expression TOK_GREATER_THAN expression */
-#line 994 "expparse.y"
+#line 926 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_GREATER_THAN, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 2972 "expparse.c"
+#line 2904 "expparse.c"
         break;
       case 95: /* expression ::= expression TOK_EQUAL expression */
-#line 1000 "expparse.y"
+#line 932 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_EQUAL, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 2981 "expparse.c"
+#line 2913 "expparse.c"
         break;
       case 96: /* expression ::= expression TOK_LESS_EQUAL expression */
-#line 1006 "expparse.y"
+#line 938 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_LESS_EQUAL, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 2990 "expparse.c"
+#line 2922 "expparse.c"
         break;
       case 97: /* expression ::= expression TOK_GREATER_EQUAL expression */
-#line 1012 "expparse.y"
+#line 944 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_GREATER_EQUAL, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 2999 "expparse.c"
+#line 2931 "expparse.c"
         break;
       case 98: /* expression ::= expression TOK_NOT_EQUAL expression */
-#line 1018 "expparse.y"
+#line 950 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_NOT_EQUAL, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 3008 "expparse.c"
+#line 2940 "expparse.c"
         break;
       case 99: /* expression ::= expression TOK_INST_EQUAL expression */
-#line 1024 "expparse.y"
+#line 956 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_INST_EQUAL, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 3017 "expparse.c"
+#line 2949 "expparse.c"
         break;
       case 100: /* expression ::= expression TOK_INST_NOT_EQUAL expression */
-#line 1030 "expparse.y"
+#line 962 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_INST_NOT_EQUAL, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 3026 "expparse.c"
+#line 2958 "expparse.c"
         break;
       case 101: /* expression ::= expression TOK_IN expression */
-#line 1036 "expparse.y"
+#line 968 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_IN, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 3035 "expparse.c"
+#line 2967 "expparse.c"
         break;
       case 102: /* expression ::= expression TOK_LIKE expression */
-#line 1042 "expparse.y"
+#line 974 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_LIKE, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 3044 "expparse.c"
+#line 2976 "expparse.c"
         break;
       case 103: /* expression ::= simple_expression cardinality_op simple_expression */
       case 240: /* right_curl ::= TOK_RIGHT_CURL */ yytestcase(yyruleno==240);
       case 254: /* semicolon ::= TOK_SEMICOLON */ yytestcase(yyruleno==254);
-#line 1048 "expparse.y"
+#line 980 "expparse.y"
 {
     yyerrok;
 }
-#line 3053 "expparse.c"
+#line 2985 "expparse.c"
         break;
       case 105: /* simple_expression ::= simple_expression TOK_CONCAT_OP simple_expression */
-#line 1058 "expparse.y"
+#line 990 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_CONCAT, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 3062 "expparse.c"
+#line 2994 "expparse.c"
         break;
       case 106: /* simple_expression ::= simple_expression TOK_EXP simple_expression */
-#line 1064 "expparse.y"
+#line 996 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_EXP, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 3071 "expparse.c"
+#line 3003 "expparse.c"
         break;
       case 107: /* simple_expression ::= simple_expression TOK_TIMES simple_expression */
-#line 1070 "expparse.y"
+#line 1002 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_TIMES, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 3080 "expparse.c"
+#line 3012 "expparse.c"
         break;
       case 108: /* simple_expression ::= simple_expression TOK_DIV simple_expression */
-#line 1076 "expparse.y"
+#line 1008 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_DIV, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 3089 "expparse.c"
+#line 3021 "expparse.c"
         break;
       case 109: /* simple_expression ::= simple_expression TOK_REAL_DIV simple_expression */
-#line 1082 "expparse.y"
+#line 1014 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_REAL_DIV, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 3098 "expparse.c"
+#line 3030 "expparse.c"
         break;
       case 110: /* simple_expression ::= simple_expression TOK_MOD simple_expression */
-#line 1088 "expparse.y"
+#line 1020 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_MOD, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 3107 "expparse.c"
+#line 3039 "expparse.c"
         break;
       case 111: /* simple_expression ::= simple_expression TOK_PLUS simple_expression */
-#line 1094 "expparse.y"
+#line 1026 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_PLUS, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 3116 "expparse.c"
+#line 3048 "expparse.c"
         break;
       case 112: /* simple_expression ::= simple_expression TOK_MINUS simple_expression */
-#line 1100 "expparse.y"
+#line 1032 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy401 = BIN_EXPcreate(OP_MINUS, yymsp[-2].minor.yy401, yymsp[0].minor.yy401);
 }
-#line 3125 "expparse.c"
+#line 3057 "expparse.c"
         break;
       case 115: /* var ::= */
-#line 1118 "expparse.y"
+#line 1050 "expparse.y"
 {
     yygotominor.yy252.var = 1;
 }
-#line 3132 "expparse.c"
+#line 3064 "expparse.c"
         break;
       case 116: /* var ::= TOK_VAR */
-#line 1122 "expparse.y"
+#line 1054 "expparse.y"
 {
     yygotominor.yy252.var = 0;
 }
-#line 3139 "expparse.c"
+#line 3071 "expparse.c"
         break;
       case 117: /* formal_parameter ::= var id_list TOK_COLON parameter_type */
-#line 1127 "expparse.y"
+#line 1059 "expparse.y"
 {
     Symbol *tmp;
     Expression e;
@@ -3160,81 +3092,81 @@ static void yy_reduce(
 
     LISTod;
 }
-#line 3164 "expparse.c"
+#line 3096 "expparse.c"
         break;
       case 118: /* formal_parameter_list ::= */
       case 179: /* inverse_clause ::= */ yytestcase(yyruleno==179);
       case 328: /* where_rule_OPT ::= */ yytestcase(yyruleno==328);
-#line 1150 "expparse.y"
+#line 1082 "expparse.y"
 {
     yygotominor.yy371 = LIST_NULL;
 }
-#line 3173 "expparse.c"
+#line 3105 "expparse.c"
         break;
       case 119: /* formal_parameter_list ::= TOK_LEFT_PAREN formal_parameter_rep TOK_RIGHT_PAREN */
-#line 1155 "expparse.y"
+#line 1087 "expparse.y"
 {
     yygotominor.yy371 = yymsp[-1].minor.yy371;
 
 }
-#line 3181 "expparse.c"
+#line 3113 "expparse.c"
         break;
       case 120: /* formal_parameter_rep ::= formal_parameter */
-#line 1161 "expparse.y"
+#line 1093 "expparse.y"
 {
     yygotominor.yy371 = yymsp[0].minor.yy371;
 
 }
-#line 3189 "expparse.c"
+#line 3121 "expparse.c"
         break;
       case 121: /* formal_parameter_rep ::= formal_parameter_rep semicolon formal_parameter */
-#line 1167 "expparse.y"
+#line 1099 "expparse.y"
 {
     yygotominor.yy371 = yymsp[-2].minor.yy371;
     LISTadd_all(yygotominor.yy371, yymsp[0].minor.yy371);
 }
-#line 3197 "expparse.c"
+#line 3129 "expparse.c"
         break;
       case 126: /* function_call ::= function_id actual_parameters */
-#line 1192 "expparse.y"
+#line 1124 "expparse.y"
 {
     yygotominor.yy401 = EXPcreate(Type_Funcall);
     yygotominor.yy401->symbol = *yymsp[-1].minor.yy275;
     SYMBOL_destroy(yymsp[-1].minor.yy275);
     yygotominor.yy401->u.funcall.list = yymsp[0].minor.yy371;
 }
-#line 3207 "expparse.c"
+#line 3139 "expparse.c"
         break;
       case 127: /* function_decl ::= function_header action_body TOK_END_FUNCTION semicolon */
-#line 1201 "expparse.y"
+#line 1133 "expparse.y"
 {
     FUNCput_body(CURRENT_SCOPE, yymsp[-2].minor.yy371);
     ALGput_full_text(CURRENT_SCOPE, yymsp[-3].minor.yy507, SCANtell());
     POP_SCOPE();
 }
-#line 3216 "expparse.c"
+#line 3148 "expparse.c"
         break;
       case 128: /* function_header ::= fh_lineno fh_push_scope fh_plist TOK_COLON parameter_type semicolon */
-#line 1209 "expparse.y"
+#line 1141 "expparse.y"
 { 
     Function f = CURRENT_SCOPE;
 
     f->u.func->return_type = yymsp[-1].minor.yy297;
     yygotominor.yy507 = yymsp[-5].minor.yy507;
 }
-#line 3226 "expparse.c"
+#line 3158 "expparse.c"
         break;
       case 129: /* fh_lineno ::= TOK_FUNCTION */
       case 218: /* ph_get_line ::= */ yytestcase(yyruleno==218);
       case 247: /* rh_get_line ::= */ yytestcase(yyruleno==247);
-#line 1217 "expparse.y"
+#line 1149 "expparse.y"
 {
     yygotominor.yy507 = SCANtell();
 }
-#line 3235 "expparse.c"
+#line 3167 "expparse.c"
         break;
       case 130: /* fh_push_scope ::= TOK_IDENTIFIER */
-#line 1222 "expparse.y"
+#line 1154 "expparse.y"
 {
     Function f = ALGcreate(OBJ_FUNCTION);
     tag_count = 0;
@@ -3243,10 +3175,10 @@ static void yy_reduce(
     }
     PUSH_SCOPE(f, yymsp[0].minor.yy0.symbol, OBJ_FUNCTION);
 }
-#line 3247 "expparse.c"
+#line 3179 "expparse.c"
         break;
       case 131: /* fh_plist ::= formal_parameter_list */
-#line 1232 "expparse.y"
+#line 1164 "expparse.y"
 {
     Function f = CURRENT_SCOPE;
     f->u.func->parameters = yymsp[0].minor.yy371;
@@ -3254,45 +3186,45 @@ static void yy_reduce(
     f->u.func->tag_count = tag_count;
     tag_count = -1;     /* done with parameters, no new tags can be defined */
 }
-#line 3258 "expparse.c"
+#line 3190 "expparse.c"
         break;
       case 132: /* function_id ::= TOK_IDENTIFIER */
       case 219: /* procedure_id ::= TOK_IDENTIFIER */ yytestcase(yyruleno==219);
       case 220: /* procedure_id ::= TOK_BUILTIN_PROCEDURE */ yytestcase(yyruleno==220);
-#line 1241 "expparse.y"
+#line 1173 "expparse.y"
 {
     yygotominor.yy275 = yymsp[0].minor.yy0.symbol;
 }
-#line 3267 "expparse.c"
+#line 3199 "expparse.c"
         break;
       case 133: /* function_id ::= TOK_BUILTIN_FUNCTION */
-#line 1245 "expparse.y"
+#line 1177 "expparse.y"
 {
     yygotominor.yy275 = yymsp[0].minor.yy0.symbol;
 
 }
-#line 3275 "expparse.c"
+#line 3207 "expparse.c"
         break;
       case 134: /* conformant_aggregation ::= aggregate_type */
-#line 1251 "expparse.y"
+#line 1183 "expparse.y"
 {
     yygotominor.yy477 = yymsp[0].minor.yy477;
 
 }
-#line 3283 "expparse.c"
+#line 3215 "expparse.c"
         break;
       case 135: /* conformant_aggregation ::= TOK_ARRAY TOK_OF optional_or_unique parameter_type */
-#line 1257 "expparse.y"
+#line 1189 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(array_);
     yygotominor.yy477->flags.optional = yymsp[-1].minor.yy252.optional;
     yygotominor.yy477->flags.unique = yymsp[-1].minor.yy252.unique;
     yygotominor.yy477->base = yymsp[0].minor.yy297;
 }
-#line 3293 "expparse.c"
+#line 3225 "expparse.c"
         break;
       case 136: /* conformant_aggregation ::= TOK_ARRAY bound_spec TOK_OF optional_or_unique parameter_type */
-#line 1265 "expparse.y"
+#line 1197 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(array_);
     yygotominor.yy477->flags.optional = yymsp[-1].minor.yy252.optional;
@@ -3301,29 +3233,29 @@ static void yy_reduce(
     yygotominor.yy477->upper = yymsp[-3].minor.yy253.upper_limit;
     yygotominor.yy477->lower = yymsp[-3].minor.yy253.lower_limit;
 }
-#line 3305 "expparse.c"
+#line 3237 "expparse.c"
         break;
       case 137: /* conformant_aggregation ::= TOK_BAG TOK_OF parameter_type */
-#line 1274 "expparse.y"
+#line 1206 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(bag_);
     yygotominor.yy477->base = yymsp[0].minor.yy297;
 
 }
-#line 3314 "expparse.c"
+#line 3246 "expparse.c"
         break;
       case 139: /* conformant_aggregation ::= TOK_LIST TOK_OF unique parameter_type */
-#line 1287 "expparse.y"
+#line 1219 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(list_);
     yygotominor.yy477->flags.unique = yymsp[-1].minor.yy252.unique;
     yygotominor.yy477->base = yymsp[0].minor.yy297;
 
 }
-#line 3324 "expparse.c"
+#line 3256 "expparse.c"
         break;
       case 140: /* conformant_aggregation ::= TOK_LIST bound_spec TOK_OF unique parameter_type */
-#line 1295 "expparse.y"
+#line 1227 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(list_);
     yygotominor.yy477->base = yymsp[0].minor.yy297;
@@ -3331,29 +3263,29 @@ static void yy_reduce(
     yygotominor.yy477->upper = yymsp[-3].minor.yy253.upper_limit;
     yygotominor.yy477->lower = yymsp[-3].minor.yy253.lower_limit;
 }
-#line 3335 "expparse.c"
+#line 3267 "expparse.c"
         break;
       case 141: /* conformant_aggregation ::= TOK_SET TOK_OF parameter_type */
       case 256: /* set_type ::= TOK_SET TOK_OF attribute_type */ yytestcase(yyruleno==256);
-#line 1303 "expparse.y"
+#line 1235 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(set_);
     yygotominor.yy477->base = yymsp[0].minor.yy297;
 }
-#line 3344 "expparse.c"
+#line 3276 "expparse.c"
         break;
       case 142: /* conformant_aggregation ::= TOK_SET bound_spec TOK_OF parameter_type */
-#line 1308 "expparse.y"
+#line 1240 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(set_);
     yygotominor.yy477->base = yymsp[0].minor.yy297;
     yygotominor.yy477->upper = yymsp[-2].minor.yy253.upper_limit;
     yygotominor.yy477->lower = yymsp[-2].minor.yy253.lower_limit;
 }
-#line 3354 "expparse.c"
+#line 3286 "expparse.c"
         break;
       case 143: /* generic_type ::= TOK_GENERIC */
-#line 1316 "expparse.y"
+#line 1248 "expparse.y"
 {
     yygotominor.yy297 = Type_Generic;
 
@@ -3365,10 +3297,10 @@ static void yy_reduce(
         CURRENT_SCOPE_NAME);
     }
 }
-#line 3369 "expparse.c"
+#line 3301 "expparse.c"
         break;
       case 144: /* generic_type ::= TOK_GENERIC TOK_COLON TOK_IDENTIFIER */
-#line 1328 "expparse.y"
+#line 1260 "expparse.y"
 {
     TypeBody g = TYPEBODYcreate(generic_);
     yygotominor.yy297 = TYPEcreate_from_body_anonymously(g);
@@ -3380,73 +3312,73 @@ static void yy_reduce(
         SCOPEadd_super(g->tag);
     }
 }
-#line 3384 "expparse.c"
+#line 3316 "expparse.c"
         break;
       case 145: /* id_list ::= TOK_IDENTIFIER */
-#line 1341 "expparse.y"
+#line 1273 "expparse.y"
 {
     yygotominor.yy371 = LISTcreate();
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy0.symbol);
 
 }
-#line 3393 "expparse.c"
+#line 3325 "expparse.c"
         break;
       case 146: /* id_list ::= id_list TOK_COMMA TOK_IDENTIFIER */
-#line 1347 "expparse.y"
+#line 1279 "expparse.y"
 {
     yyerrok;
 
     yygotominor.yy371 = yymsp[-2].minor.yy371;
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy0.symbol);
 }
-#line 3403 "expparse.c"
+#line 3335 "expparse.c"
         break;
       case 147: /* identifier ::= TOK_SELF */
-#line 1355 "expparse.y"
+#line 1287 "expparse.y"
 {
     yygotominor.yy401 = EXPcreate(Type_Self);
 }
-#line 3410 "expparse.c"
+#line 3342 "expparse.c"
         break;
       case 148: /* identifier ::= TOK_QUESTION_MARK */
-#line 1359 "expparse.y"
+#line 1291 "expparse.y"
 {
     yygotominor.yy401 = LITERAL_INFINITY;
 }
-#line 3417 "expparse.c"
+#line 3349 "expparse.c"
         break;
       case 149: /* identifier ::= TOK_IDENTIFIER */
-#line 1363 "expparse.y"
+#line 1295 "expparse.y"
 {
     yygotominor.yy401 = EXPcreate(Type_Identifier);
     yygotominor.yy401->symbol = *(yymsp[0].minor.yy0.symbol);
     SYMBOL_destroy(yymsp[0].minor.yy0.symbol);
 }
-#line 3426 "expparse.c"
+#line 3358 "expparse.c"
         break;
       case 150: /* if_statement ::= TOK_IF expression TOK_THEN statement_rep TOK_END_IF semicolon */
-#line 1371 "expparse.y"
+#line 1303 "expparse.y"
 {
     yygotominor.yy332 = CONDcreate(yymsp[-4].minor.yy401, yymsp[-2].minor.yy371, STATEMENT_LIST_NULL);
 }
-#line 3433 "expparse.c"
+#line 3365 "expparse.c"
         break;
       case 151: /* if_statement ::= TOK_IF expression TOK_THEN statement_rep TOK_ELSE statement_rep TOK_END_IF semicolon */
-#line 1376 "expparse.y"
+#line 1308 "expparse.y"
 {
     yygotominor.yy332 = CONDcreate(yymsp[-6].minor.yy401, yymsp[-4].minor.yy371, yymsp[-2].minor.yy371);
 }
-#line 3440 "expparse.c"
+#line 3372 "expparse.c"
         break;
       case 152: /* include_directive ::= TOK_INCLUDE TOK_STRING_LITERAL semicolon */
-#line 1381 "expparse.y"
+#line 1313 "expparse.y"
 {
     SCANinclude_file(yymsp[-1].minor.yy0.string);
 }
-#line 3447 "expparse.c"
+#line 3379 "expparse.c"
         break;
       case 153: /* increment_control ::= TOK_IDENTIFIER TOK_ASSIGNMENT expression TOK_TO expression by_expression */
-#line 1387 "expparse.y"
+#line 1319 "expparse.y"
 {
     Increment i = INCR_CTLcreate(yymsp[-5].minor.yy0.symbol, yymsp[-3].minor.yy401, yymsp[-1].minor.yy401, yymsp[0].minor.yy401);
 
@@ -3455,35 +3387,35 @@ static void yy_reduce(
 
     PUSH_SCOPE(i, (Symbol *)0, OBJ_INCREMENT);
 }
-#line 3459 "expparse.c"
+#line 3391 "expparse.c"
         break;
       case 155: /* rename ::= TOK_IDENTIFIER */
-#line 1405 "expparse.y"
+#line 1337 "expparse.y"
 {
     (*interface_func)(CURRENT_SCOPE, interface_schema, yymsp[0].minor.yy0, yymsp[0].minor.yy0);
 }
-#line 3466 "expparse.c"
+#line 3398 "expparse.c"
         break;
       case 156: /* rename ::= TOK_IDENTIFIER TOK_AS TOK_IDENTIFIER */
-#line 1409 "expparse.y"
+#line 1341 "expparse.y"
 {
     (*interface_func)(CURRENT_SCOPE, interface_schema, yymsp[-2].minor.yy0, yymsp[0].minor.yy0);
 }
-#line 3473 "expparse.c"
+#line 3405 "expparse.c"
         break;
       case 158: /* rename_list ::= rename_list TOK_COMMA rename */
       case 161: /* reference_clause ::= reference_head parened_rename_list semicolon */ yytestcase(yyruleno==161);
       case 164: /* use_clause ::= use_head parened_rename_list semicolon */ yytestcase(yyruleno==164);
       case 249: /* schema_body ::= interface_specification_list constant_decl block_list */ yytestcase(yyruleno==249);
       case 295: /* type_decl ::= td_start TOK_END_TYPE semicolon */ yytestcase(yyruleno==295);
-#line 1418 "expparse.y"
+#line 1350 "expparse.y"
 {
     yygotominor.yy0 = yymsp[-2].minor.yy0;
 }
-#line 3484 "expparse.c"
+#line 3416 "expparse.c"
         break;
       case 160: /* reference_clause ::= TOK_REFERENCE TOK_FROM TOK_IDENTIFIER semicolon */
-#line 1428 "expparse.y"
+#line 1360 "expparse.y"
 {
     if (!CURRENT_SCHEMA->ref_schemas) {
         CURRENT_SCHEMA->ref_schemas = LISTcreate();
@@ -3491,18 +3423,18 @@ static void yy_reduce(
 
     LISTadd_last(CURRENT_SCHEMA->ref_schemas, (Generic)yymsp[-1].minor.yy0.symbol);
 }
-#line 3495 "expparse.c"
+#line 3427 "expparse.c"
         break;
       case 162: /* reference_head ::= TOK_REFERENCE TOK_FROM TOK_IDENTIFIER */
-#line 1441 "expparse.y"
+#line 1373 "expparse.y"
 {
     interface_schema = yymsp[0].minor.yy0.symbol;
     interface_func = SCHEMAadd_reference;
 }
-#line 3503 "expparse.c"
+#line 3435 "expparse.c"
         break;
       case 163: /* use_clause ::= TOK_USE TOK_FROM TOK_IDENTIFIER semicolon */
-#line 1447 "expparse.y"
+#line 1379 "expparse.y"
 {
     if (!CURRENT_SCHEMA->use_schemas) {
         CURRENT_SCHEMA->use_schemas = LISTcreate();
@@ -3510,18 +3442,18 @@ static void yy_reduce(
 
     LISTadd_last(CURRENT_SCHEMA->use_schemas, (Generic)yymsp[-1].minor.yy0.symbol);
 }
-#line 3514 "expparse.c"
+#line 3446 "expparse.c"
         break;
       case 165: /* use_head ::= TOK_USE TOK_FROM TOK_IDENTIFIER */
-#line 1460 "expparse.y"
+#line 1392 "expparse.y"
 {
     interface_schema = yymsp[0].minor.yy0.symbol;
     interface_func = SCHEMAadd_use;
 }
-#line 3522 "expparse.c"
+#line 3454 "expparse.c"
         break;
       case 170: /* interval ::= TOK_LEFT_CURL simple_expression rel_op simple_expression rel_op simple_expression right_curl */
-#line 1483 "expparse.y"
+#line 1415 "expparse.y"
 {
     Expression    tmp1, tmp2;
 
@@ -3530,29 +3462,29 @@ static void yy_reduce(
     tmp2 = BIN_EXPcreate(yymsp[-2].minor.yy126, yymsp[-3].minor.yy401, yymsp[-1].minor.yy401);
     yygotominor.yy401 = BIN_EXPcreate(OP_AND, tmp1, tmp2);
 }
-#line 3534 "expparse.c"
+#line 3466 "expparse.c"
         break;
       case 171: /* set_or_bag_of_entity ::= defined_type */
       case 289: /* type ::= defined_type */ yytestcase(yyruleno==289);
-#line 1495 "expparse.y"
+#line 1427 "expparse.y"
 {
     yygotominor.yy378.type = yymsp[0].minor.yy297;
     yygotominor.yy378.body = 0;
 }
-#line 3543 "expparse.c"
+#line 3475 "expparse.c"
         break;
       case 172: /* set_or_bag_of_entity ::= TOK_SET TOK_OF defined_type */
-#line 1500 "expparse.y"
+#line 1432 "expparse.y"
 {
     yygotominor.yy378.type = 0;
     yygotominor.yy378.body = TYPEBODYcreate(set_);
     yygotominor.yy378.body->base = yymsp[0].minor.yy297;
 
 }
-#line 3553 "expparse.c"
+#line 3485 "expparse.c"
         break;
       case 173: /* set_or_bag_of_entity ::= TOK_SET bound_spec TOK_OF defined_type */
-#line 1507 "expparse.y"
+#line 1439 "expparse.y"
 {
     yygotominor.yy378.type = 0; 
     yygotominor.yy378.body = TYPEBODYcreate(set_);
@@ -3560,10 +3492,10 @@ static void yy_reduce(
     yygotominor.yy378.body->upper = yymsp[-2].minor.yy253.upper_limit;
     yygotominor.yy378.body->lower = yymsp[-2].minor.yy253.lower_limit;
 }
-#line 3564 "expparse.c"
+#line 3496 "expparse.c"
         break;
       case 174: /* set_or_bag_of_entity ::= TOK_BAG bound_spec TOK_OF defined_type */
-#line 1515 "expparse.y"
+#line 1447 "expparse.y"
 {
     yygotominor.yy378.type = 0;
     yygotominor.yy378.body = TYPEBODYcreate(bag_);
@@ -3571,19 +3503,19 @@ static void yy_reduce(
     yygotominor.yy378.body->upper = yymsp[-2].minor.yy253.upper_limit;
     yygotominor.yy378.body->lower = yymsp[-2].minor.yy253.lower_limit;
 }
-#line 3575 "expparse.c"
+#line 3507 "expparse.c"
         break;
       case 175: /* set_or_bag_of_entity ::= TOK_BAG TOK_OF defined_type */
-#line 1523 "expparse.y"
+#line 1455 "expparse.y"
 {
     yygotominor.yy378.type = 0;
     yygotominor.yy378.body = TYPEBODYcreate(bag_);
     yygotominor.yy378.body->base = yymsp[0].minor.yy297;
 }
-#line 3584 "expparse.c"
+#line 3516 "expparse.c"
         break;
       case 178: /* inverse_attr ::= attribute_decl TOK_COLON set_or_bag_of_entity TOK_FOR TOK_IDENTIFIER semicolon */
-#line 1550 "expparse.y"
+#line 1482 "expparse.y"
 {
     if (yymsp[-3].minor.yy378.type) {
         yygotominor.yy91 = VARcreate(yymsp[-5].minor.yy401, yymsp[-3].minor.yy378.type);
@@ -3596,10 +3528,10 @@ static void yy_reduce(
     yygotominor.yy91->flags.attribute = true;
     yygotominor.yy91->inverse_symbol = yymsp[-1].minor.yy0.symbol;
 }
-#line 3600 "expparse.c"
+#line 3532 "expparse.c"
         break;
       case 182: /* list_type ::= TOK_LIST bound_spec TOK_OF unique attribute_type */
-#line 1584 "expparse.y"
+#line 1516 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(list_);
     yygotominor.yy477->base = yymsp[0].minor.yy297;
@@ -3607,19 +3539,19 @@ static void yy_reduce(
     yygotominor.yy477->lower = yymsp[-3].minor.yy253.lower_limit;
     yygotominor.yy477->upper = yymsp[-3].minor.yy253.upper_limit;
 }
-#line 3611 "expparse.c"
+#line 3543 "expparse.c"
         break;
       case 183: /* list_type ::= TOK_LIST TOK_OF unique attribute_type */
-#line 1592 "expparse.y"
+#line 1524 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(list_);
     yygotominor.yy477->base = yymsp[0].minor.yy297;
     yygotominor.yy477->flags.unique = yymsp[-1].minor.yy252.unique;
 }
-#line 3620 "expparse.c"
+#line 3552 "expparse.c"
         break;
       case 184: /* literal ::= TOK_INTEGER_LITERAL */
-#line 1599 "expparse.y"
+#line 1531 "expparse.y"
 {
     if (yymsp[0].minor.yy0.iVal == 0) {
         yygotominor.yy401 = LITERAL_ZERO;
@@ -3631,10 +3563,10 @@ static void yy_reduce(
     resolved_all(yygotominor.yy401);
     }
 }
-#line 3635 "expparse.c"
+#line 3567 "expparse.c"
         break;
       case 185: /* literal ::= TOK_REAL_LITERAL */
-#line 1611 "expparse.y"
+#line 1543 "expparse.y"
 {
     /* if rVal (a double) is nonzero and has magnitude <= the smallest non-denormal float, print a warning */
     if( ( fabs( yymsp[0].minor.yy0.rVal ) <= FLT_MIN ) && ( fabs( yymsp[0].minor.yy0.rVal ) > 0 ) ) {
@@ -3651,46 +3583,46 @@ static void yy_reduce(
         resolved_all(yygotominor.yy401);
     }
 }
-#line 3655 "expparse.c"
+#line 3587 "expparse.c"
         break;
       case 186: /* literal ::= TOK_STRING_LITERAL */
-#line 1628 "expparse.y"
+#line 1560 "expparse.y"
 {
     yygotominor.yy401 = EXPcreate_simple(Type_String);
     yygotominor.yy401->symbol.name = yymsp[0].minor.yy0.string;
     resolved_all(yygotominor.yy401);
 }
-#line 3664 "expparse.c"
+#line 3596 "expparse.c"
         break;
       case 187: /* literal ::= TOK_STRING_LITERAL_ENCODED */
-#line 1634 "expparse.y"
+#line 1566 "expparse.y"
 {
     yygotominor.yy401 = EXPcreate_simple(Type_String_Encoded);
     yygotominor.yy401->symbol.name = yymsp[0].minor.yy0.string;
     resolved_all(yygotominor.yy401);
 }
-#line 3673 "expparse.c"
+#line 3605 "expparse.c"
         break;
       case 188: /* literal ::= TOK_LOGICAL_LITERAL */
-#line 1640 "expparse.y"
+#line 1572 "expparse.y"
 {
     yygotominor.yy401 = EXPcreate_simple(Type_Logical);
     yygotominor.yy401->u.logical = yymsp[0].minor.yy0.logical;
     resolved_all(yygotominor.yy401);
 }
-#line 3682 "expparse.c"
+#line 3614 "expparse.c"
         break;
       case 189: /* literal ::= TOK_BINARY_LITERAL */
-#line 1646 "expparse.y"
+#line 1578 "expparse.y"
 {
     yygotominor.yy401 = EXPcreate_simple(Type_Binary);
     yygotominor.yy401->symbol.name = yymsp[0].minor.yy0.binary;
     resolved_all(yygotominor.yy401);
 }
-#line 3691 "expparse.c"
+#line 3623 "expparse.c"
         break;
       case 192: /* local_variable ::= id_list TOK_COLON parameter_type semicolon */
-#line 1662 "expparse.y"
+#line 1594 "expparse.y"
 {
     Expression e;
     Variable v;
@@ -3706,10 +3638,10 @@ static void yy_reduce(
     LISTod;
     LISTfree(yymsp[-3].minor.yy371);
 }
-#line 3710 "expparse.c"
+#line 3642 "expparse.c"
         break;
       case 193: /* local_variable ::= id_list TOK_COLON parameter_type local_initializer semicolon */
-#line 1679 "expparse.y"
+#line 1611 "expparse.y"
 {
     Expression e;
     Variable v;
@@ -3723,138 +3655,138 @@ static void yy_reduce(
     LISTod;
     LISTfree(yymsp[-4].minor.yy371);
 }
-#line 3727 "expparse.c"
+#line 3659 "expparse.c"
         break;
       case 197: /* allow_generic_types ::= */
-#line 1702 "expparse.y"
+#line 1634 "expparse.y"
 {
     tag_count = 0; /* don't signal an error if we find a generic_type */
 }
-#line 3734 "expparse.c"
+#line 3666 "expparse.c"
         break;
       case 198: /* disallow_generic_types ::= */
-#line 1707 "expparse.y"
+#line 1639 "expparse.y"
 {
     tag_count = -1; /* signal an error if we find a generic_type */
 }
-#line 3741 "expparse.c"
+#line 3673 "expparse.c"
         break;
       case 199: /* defined_type ::= TOK_IDENTIFIER */
-#line 1712 "expparse.y"
+#line 1644 "expparse.y"
 {
     yygotominor.yy297 = TYPEcreate_name(yymsp[0].minor.yy0.symbol);
     SCOPEadd_super(yygotominor.yy297);
     SYMBOL_destroy(yymsp[0].minor.yy0.symbol);
 }
-#line 3750 "expparse.c"
+#line 3682 "expparse.c"
         break;
       case 200: /* defined_type_list ::= defined_type */
-#line 1719 "expparse.y"
+#line 1651 "expparse.y"
 {
     yygotominor.yy371 = LISTcreate();
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy297);
 
 }
-#line 3759 "expparse.c"
+#line 3691 "expparse.c"
         break;
       case 201: /* defined_type_list ::= defined_type_list TOK_COMMA defined_type */
-#line 1725 "expparse.y"
+#line 1657 "expparse.y"
 {
     yygotominor.yy371 = yymsp[-2].minor.yy371;
     LISTadd_last(yygotominor.yy371,
     (Generic)yymsp[0].minor.yy297);
 }
-#line 3768 "expparse.c"
+#line 3700 "expparse.c"
         break;
       case 204: /* optional_or_unique ::= */
-#line 1742 "expparse.y"
+#line 1674 "expparse.y"
 {
     yygotominor.yy252.unique = 0;
     yygotominor.yy252.optional = 0;
 }
-#line 3776 "expparse.c"
+#line 3708 "expparse.c"
         break;
       case 205: /* optional_or_unique ::= TOK_OPTIONAL */
-#line 1747 "expparse.y"
+#line 1679 "expparse.y"
 {
     yygotominor.yy252.unique = 0;
     yygotominor.yy252.optional = 1;
 }
-#line 3784 "expparse.c"
+#line 3716 "expparse.c"
         break;
       case 206: /* optional_or_unique ::= TOK_UNIQUE */
-#line 1752 "expparse.y"
+#line 1684 "expparse.y"
 {
     yygotominor.yy252.unique = 1;
     yygotominor.yy252.optional = 0;
 }
-#line 3792 "expparse.c"
+#line 3724 "expparse.c"
         break;
       case 207: /* optional_or_unique ::= TOK_OPTIONAL TOK_UNIQUE */
       case 208: /* optional_or_unique ::= TOK_UNIQUE TOK_OPTIONAL */ yytestcase(yyruleno==208);
-#line 1757 "expparse.y"
+#line 1689 "expparse.y"
 {
     yygotominor.yy252.unique = 1;
     yygotominor.yy252.optional = 1;
 }
-#line 3801 "expparse.c"
+#line 3733 "expparse.c"
         break;
       case 209: /* optional_fixed ::= */
-#line 1768 "expparse.y"
+#line 1700 "expparse.y"
 {
     yygotominor.yy252.fixed = 0;
 }
-#line 3808 "expparse.c"
+#line 3740 "expparse.c"
         break;
       case 210: /* optional_fixed ::= TOK_FIXED */
-#line 1772 "expparse.y"
+#line 1704 "expparse.y"
 {
     yygotominor.yy252.fixed = 1;
 }
-#line 3815 "expparse.c"
+#line 3747 "expparse.c"
         break;
       case 211: /* precision_spec ::= */
-#line 1777 "expparse.y"
+#line 1709 "expparse.y"
 {
     yygotominor.yy401 = (Expression)0;
 }
-#line 3822 "expparse.c"
+#line 3754 "expparse.c"
         break;
       case 212: /* precision_spec ::= TOK_LEFT_PAREN expression TOK_RIGHT_PAREN */
       case 304: /* unary_expression ::= TOK_LEFT_PAREN expression TOK_RIGHT_PAREN */ yytestcase(yyruleno==304);
-#line 1781 "expparse.y"
+#line 1713 "expparse.y"
 {
     yygotominor.yy401 = yymsp[-1].minor.yy401;
 }
-#line 3830 "expparse.c"
+#line 3762 "expparse.c"
         break;
       case 213: /* proc_call_statement ::= procedure_id actual_parameters semicolon */
-#line 1791 "expparse.y"
+#line 1723 "expparse.y"
 {
     yygotominor.yy332 = PCALLcreate(yymsp[-1].minor.yy371);
     yygotominor.yy332->symbol = *(yymsp[-2].minor.yy275);
 }
-#line 3838 "expparse.c"
+#line 3770 "expparse.c"
         break;
       case 214: /* proc_call_statement ::= procedure_id semicolon */
-#line 1796 "expparse.y"
+#line 1728 "expparse.y"
 {
     yygotominor.yy332 = PCALLcreate((Linked_List)0);
     yygotominor.yy332->symbol = *(yymsp[-1].minor.yy275);
 }
-#line 3846 "expparse.c"
+#line 3778 "expparse.c"
         break;
       case 215: /* procedure_decl ::= procedure_header action_body TOK_END_PROCEDURE semicolon */
-#line 1803 "expparse.y"
+#line 1735 "expparse.y"
 {
     PROCput_body(CURRENT_SCOPE, yymsp[-2].minor.yy371);
     ALGput_full_text(CURRENT_SCOPE, yymsp[-3].minor.yy507, SCANtell());
     POP_SCOPE();
 }
-#line 3855 "expparse.c"
+#line 3787 "expparse.c"
         break;
       case 216: /* procedure_header ::= TOK_PROCEDURE ph_get_line ph_push_scope formal_parameter_list semicolon */
-#line 1811 "expparse.y"
+#line 1743 "expparse.y"
 {
     Procedure p = CURRENT_SCOPE;
     p->u.proc->parameters = yymsp[-1].minor.yy371;
@@ -3863,10 +3795,10 @@ static void yy_reduce(
     tag_count = -1;    /* done with parameters, no new tags can be defined */
     yygotominor.yy507 = yymsp[-3].minor.yy507;
 }
-#line 3867 "expparse.c"
+#line 3799 "expparse.c"
         break;
       case 217: /* ph_push_scope ::= TOK_IDENTIFIER */
-#line 1821 "expparse.y"
+#line 1753 "expparse.y"
 {
     Procedure p = ALGcreate(OBJ_PROCEDURE);
     tag_count = 0;
@@ -3877,174 +3809,174 @@ static void yy_reduce(
 
     PUSH_SCOPE(p, yymsp[0].minor.yy0.symbol, OBJ_PROCEDURE);
 }
-#line 3881 "expparse.c"
+#line 3813 "expparse.c"
         break;
       case 221: /* group_ref ::= TOK_BACKSLASH TOK_IDENTIFIER */
-#line 1847 "expparse.y"
+#line 1779 "expparse.y"
 {
     yygotominor.yy401 = BIN_EXPcreate(OP_GROUP, (Expression)0, (Expression)0);
     yygotominor.yy401->e.op2 = EXPcreate(Type_Identifier);
     yygotominor.yy401->e.op2->symbol = *yymsp[0].minor.yy0.symbol;
     SYMBOL_destroy(yymsp[0].minor.yy0.symbol);
 }
-#line 3891 "expparse.c"
+#line 3823 "expparse.c"
         break;
       case 222: /* qualifier ::= TOK_DOT TOK_IDENTIFIER */
-#line 1855 "expparse.y"
+#line 1787 "expparse.y"
 {
     yygotominor.yy46.expr = yygotominor.yy46.first = BIN_EXPcreate(OP_DOT, (Expression)0, (Expression)0);
     yygotominor.yy46.expr->e.op2 = EXPcreate(Type_Identifier);
     yygotominor.yy46.expr->e.op2->symbol = *yymsp[0].minor.yy0.symbol;
     SYMBOL_destroy(yymsp[0].minor.yy0.symbol);
 }
-#line 3901 "expparse.c"
+#line 3833 "expparse.c"
         break;
       case 223: /* qualifier ::= TOK_BACKSLASH TOK_IDENTIFIER */
-#line 1862 "expparse.y"
+#line 1794 "expparse.y"
 {
     yygotominor.yy46.expr = yygotominor.yy46.first = BIN_EXPcreate(OP_GROUP, (Expression)0, (Expression)0);
     yygotominor.yy46.expr->e.op2 = EXPcreate(Type_Identifier);
     yygotominor.yy46.expr->e.op2->symbol = *yymsp[0].minor.yy0.symbol;
     SYMBOL_destroy(yymsp[0].minor.yy0.symbol);
 }
-#line 3911 "expparse.c"
+#line 3843 "expparse.c"
         break;
       case 224: /* qualifier ::= TOK_LEFT_BRACKET simple_expression TOK_RIGHT_BRACKET */
-#line 1871 "expparse.y"
+#line 1803 "expparse.y"
 {
     yygotominor.yy46.expr = yygotominor.yy46.first = BIN_EXPcreate(OP_ARRAY_ELEMENT, (Expression)0,
     (Expression)0);
     yygotominor.yy46.expr->e.op2 = yymsp[-1].minor.yy401;
 }
-#line 3920 "expparse.c"
+#line 3852 "expparse.c"
         break;
       case 225: /* qualifier ::= TOK_LEFT_BRACKET simple_expression TOK_COLON simple_expression TOK_RIGHT_BRACKET */
-#line 1880 "expparse.y"
+#line 1812 "expparse.y"
 {
     yygotominor.yy46.expr = yygotominor.yy46.first = TERN_EXPcreate(OP_SUBCOMPONENT, (Expression)0,
     (Expression)0, (Expression)0);
     yygotominor.yy46.expr->e.op2 = yymsp[-3].minor.yy401;
     yygotominor.yy46.expr->e.op3 = yymsp[-1].minor.yy401;
 }
-#line 3930 "expparse.c"
+#line 3862 "expparse.c"
         break;
       case 226: /* query_expression ::= query_start expression TOK_RIGHT_PAREN */
-#line 1888 "expparse.y"
+#line 1820 "expparse.y"
 {
     yygotominor.yy401 = yymsp[-2].minor.yy401;
     yygotominor.yy401->u.query->expression = yymsp[-1].minor.yy401;
     POP_SCOPE();
 }
-#line 3939 "expparse.c"
+#line 3871 "expparse.c"
         break;
       case 227: /* query_start ::= TOK_QUERY TOK_LEFT_PAREN TOK_IDENTIFIER TOK_ALL_IN expression TOK_SUCH_THAT */
-#line 1896 "expparse.y"
+#line 1828 "expparse.y"
 {
     yygotominor.yy401 = QUERYcreate(yymsp[-3].minor.yy0.symbol, yymsp[-1].minor.yy401);
     SYMBOL_destroy(yymsp[-3].minor.yy0.symbol);
     PUSH_SCOPE(yygotominor.yy401->u.query->scope, (Symbol *)0, OBJ_QUERY);
 }
-#line 3948 "expparse.c"
+#line 3880 "expparse.c"
         break;
       case 228: /* rel_op ::= TOK_LESS_THAN */
-#line 1903 "expparse.y"
+#line 1835 "expparse.y"
 {
     yygotominor.yy126 = OP_LESS_THAN;
 }
-#line 3955 "expparse.c"
+#line 3887 "expparse.c"
         break;
       case 229: /* rel_op ::= TOK_GREATER_THAN */
-#line 1907 "expparse.y"
+#line 1839 "expparse.y"
 {
     yygotominor.yy126 = OP_GREATER_THAN;
 }
-#line 3962 "expparse.c"
+#line 3894 "expparse.c"
         break;
       case 230: /* rel_op ::= TOK_EQUAL */
-#line 1911 "expparse.y"
+#line 1843 "expparse.y"
 {
     yygotominor.yy126 = OP_EQUAL;
 }
-#line 3969 "expparse.c"
+#line 3901 "expparse.c"
         break;
       case 231: /* rel_op ::= TOK_LESS_EQUAL */
-#line 1915 "expparse.y"
+#line 1847 "expparse.y"
 {
     yygotominor.yy126 = OP_LESS_EQUAL;
 }
-#line 3976 "expparse.c"
+#line 3908 "expparse.c"
         break;
       case 232: /* rel_op ::= TOK_GREATER_EQUAL */
-#line 1919 "expparse.y"
+#line 1851 "expparse.y"
 {
     yygotominor.yy126 = OP_GREATER_EQUAL;
 }
-#line 3983 "expparse.c"
+#line 3915 "expparse.c"
         break;
       case 233: /* rel_op ::= TOK_NOT_EQUAL */
-#line 1923 "expparse.y"
+#line 1855 "expparse.y"
 {
     yygotominor.yy126 = OP_NOT_EQUAL;
 }
-#line 3990 "expparse.c"
+#line 3922 "expparse.c"
         break;
       case 234: /* rel_op ::= TOK_INST_EQUAL */
-#line 1927 "expparse.y"
+#line 1859 "expparse.y"
 {
     yygotominor.yy126 = OP_INST_EQUAL;
 }
-#line 3997 "expparse.c"
+#line 3929 "expparse.c"
         break;
       case 235: /* rel_op ::= TOK_INST_NOT_EQUAL */
-#line 1931 "expparse.y"
+#line 1863 "expparse.y"
 {
     yygotominor.yy126 = OP_INST_NOT_EQUAL;
 }
-#line 4004 "expparse.c"
+#line 3936 "expparse.c"
         break;
       case 236: /* repeat_statement ::= TOK_REPEAT increment_control while_control until_control semicolon statement_rep TOK_END_REPEAT semicolon */
-#line 1939 "expparse.y"
+#line 1871 "expparse.y"
 {
     yygotominor.yy332 = LOOPcreate(CURRENT_SCOPE, yymsp[-5].minor.yy401, yymsp[-4].minor.yy401, yymsp[-2].minor.yy371);
 
     /* matching PUSH_SCOPE is in increment_control */
     POP_SCOPE();
 }
-#line 4014 "expparse.c"
+#line 3946 "expparse.c"
         break;
       case 237: /* repeat_statement ::= TOK_REPEAT while_control until_control semicolon statement_rep TOK_END_REPEAT semicolon */
-#line 1947 "expparse.y"
+#line 1879 "expparse.y"
 {
     yygotominor.yy332 = LOOPcreate((struct Scope_ *)0, yymsp[-5].minor.yy401, yymsp[-4].minor.yy401, yymsp[-2].minor.yy371);
 }
-#line 4021 "expparse.c"
+#line 3953 "expparse.c"
         break;
       case 238: /* return_statement ::= TOK_RETURN semicolon */
-#line 1952 "expparse.y"
+#line 1884 "expparse.y"
 {
     yygotominor.yy332 = RETcreate((Expression)0);
 }
-#line 4028 "expparse.c"
+#line 3960 "expparse.c"
         break;
       case 239: /* return_statement ::= TOK_RETURN TOK_LEFT_PAREN expression TOK_RIGHT_PAREN semicolon */
-#line 1957 "expparse.y"
+#line 1889 "expparse.y"
 {
     yygotominor.yy332 = RETcreate(yymsp[-2].minor.yy401);
 }
-#line 4035 "expparse.c"
+#line 3967 "expparse.c"
         break;
       case 241: /* rule_decl ::= rule_header action_body where_rule TOK_END_RULE semicolon */
-#line 1968 "expparse.y"
+#line 1900 "expparse.y"
 {
     RULEput_body(CURRENT_SCOPE, yymsp[-3].minor.yy371);
     RULEput_where(CURRENT_SCOPE, yymsp[-2].minor.yy371);
     ALGput_full_text(CURRENT_SCOPE, yymsp[-4].minor.yy507, SCANtell());
     POP_SCOPE();
 }
-#line 4045 "expparse.c"
+#line 3977 "expparse.c"
         break;
       case 242: /* rule_formal_parameter ::= TOK_IDENTIFIER */
-#line 1976 "expparse.y"
+#line 1908 "expparse.y"
 {
     Expression e;
     Type t;
@@ -4064,35 +3996,35 @@ static void yy_reduce(
     DICTdefine(CURRENT_SCOPE->symbol_table, yymsp[0].minor.yy0.symbol->name, (Generic)yygotominor.yy91,
     yymsp[0].minor.yy0.symbol, OBJ_VARIABLE);
 }
-#line 4068 "expparse.c"
+#line 4000 "expparse.c"
         break;
       case 243: /* rule_formal_parameter_list ::= rule_formal_parameter */
-#line 1997 "expparse.y"
+#line 1929 "expparse.y"
 {
     yygotominor.yy371 = LISTcreate();
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy91); 
 }
-#line 4076 "expparse.c"
+#line 4008 "expparse.c"
         break;
       case 244: /* rule_formal_parameter_list ::= rule_formal_parameter_list TOK_COMMA rule_formal_parameter */
-#line 2003 "expparse.y"
+#line 1935 "expparse.y"
 {
     yygotominor.yy371 = yymsp[-2].minor.yy371;
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy91);
 }
-#line 4084 "expparse.c"
+#line 4016 "expparse.c"
         break;
       case 245: /* rule_header ::= rh_start rule_formal_parameter_list TOK_RIGHT_PAREN semicolon */
-#line 2010 "expparse.y"
+#line 1942 "expparse.y"
 {
     CURRENT_SCOPE->u.rule->parameters = yymsp[-2].minor.yy371;
 
     yygotominor.yy507 = yymsp[-3].minor.yy507;
 }
-#line 4093 "expparse.c"
+#line 4025 "expparse.c"
         break;
       case 246: /* rh_start ::= TOK_RULE rh_get_line TOK_IDENTIFIER TOK_FOR TOK_LEFT_PAREN */
-#line 2018 "expparse.y"
+#line 1950 "expparse.y"
 {
     Rule r = ALGcreate(OBJ_RULE);
 
@@ -4104,17 +4036,17 @@ static void yy_reduce(
 
     yygotominor.yy507 = yymsp[-3].minor.yy507;
 }
-#line 4108 "expparse.c"
+#line 4040 "expparse.c"
         break;
       case 250: /* schema_decl ::= schema_header schema_body TOK_END_SCHEMA semicolon */
-#line 2045 "expparse.y"
+#line 1977 "expparse.y"
 {
     POP_SCOPE();
 }
-#line 4115 "expparse.c"
+#line 4047 "expparse.c"
         break;
       case 252: /* schema_header ::= TOK_SCHEMA TOK_IDENTIFIER semicolon */
-#line 2054 "expparse.y"
+#line 1986 "expparse.y"
 {
     Schema schema = ( Schema ) DICTlookup(CURRENT_SCOPE->symbol_table, yymsp[-1].minor.yy0.symbol->name);
 
@@ -4131,32 +4063,32 @@ static void yy_reduce(
     PUSH_SCOPE(schema, yymsp[-1].minor.yy0.symbol, OBJ_SCHEMA);
     }
 }
-#line 4135 "expparse.c"
+#line 4067 "expparse.c"
         break;
       case 253: /* select_type ::= TOK_SELECT TOK_LEFT_PAREN defined_type_list TOK_RIGHT_PAREN */
-#line 2073 "expparse.y"
+#line 2005 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(select_);
     yygotominor.yy477->list = yymsp[-1].minor.yy371;
 }
-#line 4143 "expparse.c"
+#line 4075 "expparse.c"
         break;
       case 255: /* set_type ::= TOK_SET bound_spec TOK_OF attribute_type */
-#line 2084 "expparse.y"
+#line 2016 "expparse.y"
 {
     yygotominor.yy477 = TYPEBODYcreate(set_);
     yygotominor.yy477->base = yymsp[0].minor.yy297;
     yygotominor.yy477->lower = yymsp[-2].minor.yy253.lower_limit;
     yygotominor.yy477->upper = yymsp[-2].minor.yy253.upper_limit;
 }
-#line 4153 "expparse.c"
+#line 4085 "expparse.c"
         break;
       case 257: /* skip_statement ::= TOK_SKIP semicolon */
-#line 2097 "expparse.y"
+#line 2029 "expparse.y"
 {
     yygotominor.yy332 = STATEMENT_SKIP;
 }
-#line 4160 "expparse.c"
+#line 4092 "expparse.c"
         break;
       case 258: /* statement ::= alias_statement */
       case 259: /* statement ::= assignment_statement */ yytestcase(yyruleno==259);
@@ -4168,253 +4100,253 @@ static void yy_reduce(
       case 265: /* statement ::= repeat_statement */ yytestcase(yyruleno==265);
       case 266: /* statement ::= return_statement */ yytestcase(yyruleno==266);
       case 267: /* statement ::= skip_statement */ yytestcase(yyruleno==267);
-#line 2102 "expparse.y"
+#line 2034 "expparse.y"
 {
     yygotominor.yy332 = yymsp[0].minor.yy332;
 }
-#line 4176 "expparse.c"
+#line 4108 "expparse.c"
         break;
       case 270: /* statement_rep ::= statement statement_rep */
-#line 2151 "expparse.y"
+#line 2083 "expparse.y"
 {
     yygotominor.yy371 = yymsp[0].minor.yy371;
     LISTadd_first(yygotominor.yy371, (Generic)yymsp[-1].minor.yy332); 
 }
-#line 4184 "expparse.c"
+#line 4116 "expparse.c"
         break;
       case 271: /* subsuper_decl ::= */
-#line 2161 "expparse.y"
+#line 2093 "expparse.y"
 {
     yygotominor.yy242.subtypes = EXPRESSION_NULL;
     yygotominor.yy242.abstract = false;
     yygotominor.yy242.supertypes = LIST_NULL;
 }
-#line 4193 "expparse.c"
+#line 4125 "expparse.c"
         break;
       case 272: /* subsuper_decl ::= supertype_decl */
-#line 2167 "expparse.y"
+#line 2099 "expparse.y"
 {
     yygotominor.yy242.subtypes = yymsp[0].minor.yy385.subtypes;
     yygotominor.yy242.abstract = yymsp[0].minor.yy385.abstract;
     yygotominor.yy242.supertypes = LIST_NULL;
 }
-#line 4202 "expparse.c"
+#line 4134 "expparse.c"
         break;
       case 273: /* subsuper_decl ::= subtype_decl */
-#line 2173 "expparse.y"
+#line 2105 "expparse.y"
 {
     yygotominor.yy242.supertypes = yymsp[0].minor.yy371;
     yygotominor.yy242.abstract = false;
     yygotominor.yy242.subtypes = EXPRESSION_NULL;
 }
-#line 4211 "expparse.c"
+#line 4143 "expparse.c"
         break;
       case 274: /* subsuper_decl ::= supertype_decl subtype_decl */
-#line 2179 "expparse.y"
+#line 2111 "expparse.y"
 {
     yygotominor.yy242.subtypes = yymsp[-1].minor.yy385.subtypes;
     yygotominor.yy242.abstract = yymsp[-1].minor.yy385.abstract;
     yygotominor.yy242.supertypes = yymsp[0].minor.yy371;
 }
-#line 4220 "expparse.c"
+#line 4152 "expparse.c"
         break;
       case 276: /* supertype_decl ::= TOK_ABSTRACT TOK_SUPERTYPE */
-#line 2192 "expparse.y"
+#line 2124 "expparse.y"
 {
     yygotominor.yy385.subtypes = (Expression)0;
     yygotominor.yy385.abstract = true;
 }
-#line 4228 "expparse.c"
+#line 4160 "expparse.c"
         break;
       case 277: /* supertype_decl ::= TOK_SUPERTYPE TOK_OF TOK_LEFT_PAREN supertype_expression TOK_RIGHT_PAREN */
-#line 2198 "expparse.y"
+#line 2130 "expparse.y"
 {
     yygotominor.yy385.subtypes = yymsp[-1].minor.yy401;
     yygotominor.yy385.abstract = false;
 }
-#line 4236 "expparse.c"
+#line 4168 "expparse.c"
         break;
       case 278: /* supertype_decl ::= TOK_ABSTRACT TOK_SUPERTYPE TOK_OF TOK_LEFT_PAREN supertype_expression TOK_RIGHT_PAREN */
-#line 2204 "expparse.y"
+#line 2136 "expparse.y"
 {
     yygotominor.yy385.subtypes = yymsp[-1].minor.yy401;
     yygotominor.yy385.abstract = true;
 }
-#line 4244 "expparse.c"
+#line 4176 "expparse.c"
         break;
       case 279: /* supertype_expression ::= supertype_factor */
-#line 2210 "expparse.y"
+#line 2142 "expparse.y"
 {
     yygotominor.yy401 = yymsp[0].minor.yy385.subtypes;
 }
-#line 4251 "expparse.c"
+#line 4183 "expparse.c"
         break;
       case 280: /* supertype_expression ::= supertype_expression TOK_AND supertype_factor */
-#line 2214 "expparse.y"
+#line 2146 "expparse.y"
 {
     yygotominor.yy401 = BIN_EXPcreate(OP_AND, yymsp[-2].minor.yy401, yymsp[0].minor.yy385.subtypes);
 }
-#line 4258 "expparse.c"
+#line 4190 "expparse.c"
         break;
       case 281: /* supertype_expression ::= supertype_expression TOK_ANDOR supertype_factor */
-#line 2219 "expparse.y"
+#line 2151 "expparse.y"
 {
     yygotominor.yy401 = BIN_EXPcreate(OP_ANDOR, yymsp[-2].minor.yy401, yymsp[0].minor.yy385.subtypes);
 }
-#line 4265 "expparse.c"
+#line 4197 "expparse.c"
         break;
       case 283: /* supertype_expression_list ::= supertype_expression_list TOK_COMMA supertype_expression */
-#line 2230 "expparse.y"
+#line 2162 "expparse.y"
 {
     LISTadd_last(yymsp[-2].minor.yy371, (Generic)yymsp[0].minor.yy401);
     yygotominor.yy371 = yymsp[-2].minor.yy371;
 }
-#line 4273 "expparse.c"
+#line 4205 "expparse.c"
         break;
       case 284: /* supertype_factor ::= identifier */
-#line 2236 "expparse.y"
+#line 2168 "expparse.y"
 {
     yygotominor.yy385.subtypes = yymsp[0].minor.yy401;
 }
-#line 4280 "expparse.c"
+#line 4212 "expparse.c"
         break;
       case 285: /* supertype_factor ::= oneof_op TOK_LEFT_PAREN supertype_expression_list TOK_RIGHT_PAREN */
-#line 2241 "expparse.y"
+#line 2173 "expparse.y"
 {
     yygotominor.yy385.subtypes = EXPcreate(Type_Oneof);
     yygotominor.yy385.subtypes->u.list = yymsp[-1].minor.yy371;
 }
-#line 4288 "expparse.c"
+#line 4220 "expparse.c"
         break;
       case 286: /* supertype_factor ::= TOK_LEFT_PAREN supertype_expression TOK_RIGHT_PAREN */
-#line 2246 "expparse.y"
+#line 2178 "expparse.y"
 {
     yygotominor.yy385.subtypes = yymsp[-1].minor.yy401;
 }
-#line 4295 "expparse.c"
+#line 4227 "expparse.c"
         break;
       case 287: /* type ::= aggregation_type */
       case 288: /* type ::= basic_type */ yytestcase(yyruleno==288);
       case 290: /* type ::= select_type */ yytestcase(yyruleno==290);
-#line 2251 "expparse.y"
+#line 2183 "expparse.y"
 {
     yygotominor.yy378.type = 0;
     yygotominor.yy378.body = yymsp[0].minor.yy477;
 }
-#line 4305 "expparse.c"
+#line 4237 "expparse.c"
         break;
       case 292: /* type_item_body ::= type */
-#line 2276 "expparse.y"
+#line 2208 "expparse.y"
 {
     CURRENT_SCOPE->u.type->head = yymsp[0].minor.yy378.type;
     CURRENT_SCOPE->u.type->body = yymsp[0].minor.yy378.body;
 }
-#line 4313 "expparse.c"
+#line 4245 "expparse.c"
         break;
       case 294: /* ti_start ::= TOK_IDENTIFIER TOK_EQUAL */
-#line 2284 "expparse.y"
+#line 2216 "expparse.y"
 {
     Type t = TYPEcreate_name(yymsp[-1].minor.yy0.symbol);
     PUSH_SCOPE(t, yymsp[-1].minor.yy0.symbol, OBJ_TYPE);
 }
-#line 4321 "expparse.c"
+#line 4253 "expparse.c"
         break;
       case 296: /* td_start ::= TOK_TYPE type_item where_rule_OPT */
-#line 2295 "expparse.y"
+#line 2227 "expparse.y"
 {
     CURRENT_SCOPE->where = yymsp[0].minor.yy371;
     POP_SCOPE();
     yygotominor.yy0 = yymsp[-2].minor.yy0;
 }
-#line 4330 "expparse.c"
+#line 4262 "expparse.c"
         break;
       case 297: /* general_ref ::= assignable group_ref */
-#line 2302 "expparse.y"
+#line 2234 "expparse.y"
 {
     yymsp[0].minor.yy401->e.op1 = yymsp[-1].minor.yy401;
     yygotominor.yy401 = yymsp[0].minor.yy401;
 }
-#line 4338 "expparse.c"
+#line 4270 "expparse.c"
         break;
       case 307: /* unary_expression ::= TOK_NOT unary_expression */
-#line 2345 "expparse.y"
+#line 2277 "expparse.y"
 {
     yygotominor.yy401 = UN_EXPcreate(OP_NOT, yymsp[0].minor.yy401);
 }
-#line 4345 "expparse.c"
+#line 4277 "expparse.c"
         break;
       case 309: /* unary_expression ::= TOK_MINUS unary_expression */
-#line 2353 "expparse.y"
+#line 2285 "expparse.y"
 {
     yygotominor.yy401 = UN_EXPcreate(OP_NEGATE, yymsp[0].minor.yy401);
 }
-#line 4352 "expparse.c"
+#line 4284 "expparse.c"
         break;
       case 310: /* unique ::= */
-#line 2358 "expparse.y"
+#line 2290 "expparse.y"
 {
     yygotominor.yy252.unique = 0;
 }
-#line 4359 "expparse.c"
+#line 4291 "expparse.c"
         break;
       case 311: /* unique ::= TOK_UNIQUE */
-#line 2362 "expparse.y"
+#line 2294 "expparse.y"
 {
     yygotominor.yy252.unique = 1;
 }
-#line 4366 "expparse.c"
+#line 4298 "expparse.c"
         break;
       case 315: /* labelled_attrib_list ::= qualified_attr_list semicolon */
-#line 2389 "expparse.y"
+#line 2321 "expparse.y"
 {
     LISTadd_first(yymsp[-1].minor.yy371, (Generic)EXPRESSION_NULL);
     yygotominor.yy371 = yymsp[-1].minor.yy371;
 }
-#line 4374 "expparse.c"
+#line 4306 "expparse.c"
         break;
       case 316: /* labelled_attrib_list ::= TOK_IDENTIFIER TOK_COLON qualified_attr_list semicolon */
-#line 2395 "expparse.y"
+#line 2327 "expparse.y"
 {
     LISTadd_first(yymsp[-1].minor.yy371, (Generic)yymsp[-3].minor.yy0.symbol); 
     yygotominor.yy371 = yymsp[-1].minor.yy371;
 }
-#line 4382 "expparse.c"
+#line 4314 "expparse.c"
         break;
       case 317: /* labelled_attrib_list_list ::= labelled_attrib_list */
-#line 2402 "expparse.y"
+#line 2334 "expparse.y"
 {
     yygotominor.yy371 = LISTcreate();
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy371);
 }
-#line 4390 "expparse.c"
+#line 4322 "expparse.c"
         break;
       case 318: /* labelled_attrib_list_list ::= labelled_attrib_list_list labelled_attrib_list */
-#line 2408 "expparse.y"
+#line 2340 "expparse.y"
 {
     LISTadd_last(yymsp[-1].minor.yy371, (Generic)yymsp[0].minor.yy371);
     yygotominor.yy371 = yymsp[-1].minor.yy371;
 }
-#line 4398 "expparse.c"
+#line 4330 "expparse.c"
         break;
       case 321: /* until_control ::= */
       case 330: /* while_control ::= */ yytestcase(yyruleno==330);
-#line 2423 "expparse.y"
+#line 2355 "expparse.y"
 {
     yygotominor.yy401 = 0;
 }
-#line 4406 "expparse.c"
+#line 4338 "expparse.c"
         break;
       case 323: /* where_clause ::= expression semicolon */
-#line 2432 "expparse.y"
+#line 2364 "expparse.y"
 {
     yygotominor.yy234 = WHERE_new();
     yygotominor.yy234->label = SYMBOLcreate("<unnamed>", yylineno, current_filename);
     yygotominor.yy234->expr = yymsp[-1].minor.yy401;
 }
-#line 4415 "expparse.c"
+#line 4347 "expparse.c"
         break;
       case 324: /* where_clause ::= TOK_IDENTIFIER TOK_COLON expression semicolon */
-#line 2438 "expparse.y"
+#line 2370 "expparse.y"
 {
     yygotominor.yy234 = WHERE_new();
     yygotominor.yy234->label = yymsp[-3].minor.yy0.symbol;
@@ -4427,23 +4359,23 @@ static void yy_reduce(
     DICTdefine(CURRENT_SCOPE->symbol_table, yymsp[-3].minor.yy0.symbol->name, (Generic)yygotominor.yy234,
     yymsp[-3].minor.yy0.symbol, OBJ_WHERE);
 }
-#line 4431 "expparse.c"
+#line 4363 "expparse.c"
         break;
       case 325: /* where_clause_list ::= where_clause */
-#line 2452 "expparse.y"
+#line 2384 "expparse.y"
 {
     yygotominor.yy371 = LISTcreate();
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy234);
 }
-#line 4439 "expparse.c"
+#line 4371 "expparse.c"
         break;
       case 326: /* where_clause_list ::= where_clause_list where_clause */
-#line 2457 "expparse.y"
+#line 2389 "expparse.y"
 {
     yygotominor.yy371 = yymsp[-1].minor.yy371;
     LISTadd_last(yygotominor.yy371, (Generic)yymsp[0].minor.yy234);
 }
-#line 4447 "expparse.c"
+#line 4379 "expparse.c"
         break;
       default:
       /* (4) action_body_item_rep ::= */ yytestcase(yyruleno==4);
@@ -4514,7 +4446,7 @@ static void yy_syntax_error(
 ){
   ParseARG_FETCH;
 #define TOKEN (yyminor.yy0)
-#line 2485 "expparse.y"
+#line 2417 "expparse.y"
 
     Symbol sym;
 
@@ -4527,7 +4459,7 @@ static void yy_syntax_error(
 
     ERRORreport_with_symbol(ERROR_syntax, &sym, "",
     CURRENT_SCOPE_TYPE_PRINTABLE, CURRENT_SCOPE_NAME);
-#line 4531 "expparse.c"
+#line 4463 "expparse.c"
   ParseARG_STORE; /* Suppress warning about unused %extra_argument variable */
 }
 
