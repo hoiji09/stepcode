@@ -36,3 +36,11 @@ add_test( NAME test_exppp_inverse_qualifiers
                                    -P ${CMAKE_CURRENT_SOURCE_DIR}/inverse_qualifiers.cmake
         )
 set_tests_properties( test_exppp_unique_qualifiers test_exppp_inverse_qualifiers PROPERTIES DEPENDS exppp )
+
+# Local Variables:
+# tab-width: 8
+# mode: cmake
+# indent-tabs-mode: t
+# End:
+# ex: shiftwidth=2 tabstop=8
+

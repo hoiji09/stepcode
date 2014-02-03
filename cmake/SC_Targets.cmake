@@ -136,3 +136,11 @@ MACRO(SC_ADDLIB libname srcslist libslist)
       ENDIF(BUILD_STATIC_LIBS AND NOT MSVC)
   ENDIF(LOCAL_COMPILE_FLAGS)
 ENDMACRO(SC_ADDLIB libname srcslist libslist)
+
+# Local Variables:
+# tab-width: 8
+# mode: cmake
+# indent-tabs-mode: t
+# End:
+# ex: shiftwidth=2 tabstop=8
+
